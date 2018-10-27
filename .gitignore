@@ -17,6 +17,7 @@ public/img/
 /.idea
 /.vscode
 /.vagrant
+/.docker
 Homestead.json
 Homestead.yaml
 npm-debug.log

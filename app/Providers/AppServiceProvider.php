@@ -23,6 +23,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->composers();
+    }
+
+    public function composers()
+    {
+        view()->composer('backend.*', function ($view) {
+            $view->with('me', \Auth::guard('backend')->user());
+        });
     }
 }

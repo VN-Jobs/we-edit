@@ -14,6 +14,7 @@
 Route::group(['namespace' => 'Backend'], function () {
     Auth::routes();
     Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth']], function () {
+        Route::get('/', 'HomeController@index')->name('home.index');
         Route::resource('user', 'UserController');
     });
 });

@@ -4,7 +4,7 @@
         <a class="brand" href="#"></a>
     </div>
 
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $me->login_name }} <span class="caret"></span></a>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $me->name }} <span class="caret"></span></a>
     <ul class="dropdown-menu dropdown-menu-right">
         <li><a href="#"> <i class="ion-person"></i> {{ __('repositories.title.profile') }}</a></li>
         <li><a href="#"> <i class="ion-ios-cog"></i> {{ __('repositories.title.setting') }}</a></li>
@@ -16,7 +16,7 @@
             <i class="ion-android-exit"></i>
             {{ __('repositories.title.logout') }}
             </a>
-            {{ Form::open(['url' => route('logout'), 'style' => 'display:none']) }}
+            {{ Form::open(['url' => route('logout'), 'style' => 'display:none', 'id' => 'logout-form']) }}
             {{ Form::close() }}
         </li>
     </ul>

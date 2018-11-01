@@ -23,6 +23,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        if (env('APP_ENV') == 'local' || env('APP_ENV') == 'dev') {
+            $this->app->register(\Lord\Laroute\LarouteServiceProvider::class);
+            $this->app->register(\Mariuzzo\LaravelJsLocalization\LaravelJsLocalizationServiceProvider::class);
+        }
+
         $this->composers();
     }
 

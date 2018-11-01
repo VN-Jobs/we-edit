@@ -11,7 +11,9 @@ window.Popper = require('popper.js').default;
 try {
     window.$ = window.jQuery = require('jquery');
 
+    require('./lang');
     require('bootstrap-sass');
+    window.laroute = require('./laroute');
 } catch (e) {}
 
 /**

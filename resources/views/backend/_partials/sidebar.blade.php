@@ -23,16 +23,12 @@
             <li class="nav-item nav-dropdown">
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="ion-ios-book"></i> {{ __('repositories.title.article') }}</a>
                 <ul class="nav-dropdown-items">
-                    @can('post-read')
                     <li class="nav-item">
                         <a class="nav-link" href="#"> {{ __('repositories.post.article') }}</a>
                     </li>
-                    @endcan
-                    @can('category-read')
                     <li class="nav-item">
                         <a class="nav-link" href="#"> {{ __('repositories.category.name') }}</a>
                     </li>
-                    @endcan
                 </ul>
             </li>
             <li class="nav-item nav-dropdown">

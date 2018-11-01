@@ -32,4 +32,11 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
+    public function scopeByKeywords($query, $keywords)
+    {
+        return $query->where('username', 'LIKE', "{$keywords}%")
+            ->orWhere('name', 'LIKE', "{$keywords}%")
+            ->orWhere('email', 'LIKE', "{$keywords}%");
+    }
 }

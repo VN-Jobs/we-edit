@@ -23,7 +23,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::bind('user', function ($id) {
+            return \Repo::resolve('user')->findOrFail($id);
+        });
 
         parent::boot();
     }

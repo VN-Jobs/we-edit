@@ -16,6 +16,7 @@ return [
         'logout' => 'Thoát',
         'setting' => 'Cài đặt',
         'search' => 'Tìm kiếm',
+        'searching' => 'Tìm kiếm...',
         'reset' => 'Xoá',
         'create' => 'Tạo mới',
         'edit' => 'Cập nhật',

@@ -61,26 +61,26 @@ abstract class BackendController extends AbstractController
 
     public function __index()
     {
-        $this->view = $this->repositoryName . '.index';
+        $this->view = sprintf('%s.index', $this->repositoryName);
         $this->compacts['heading'] = __("repositories.{$this->repositoryName}.resource.index");
     }
 
     public function __create()
     {
-        $this->view = $this->repositoryName . '.create';
+        $this->view = sprintf('%s.create', $this->repositoryName);
         $this->compacts['heading'] = __("repositories.{$this->repositoryName}.resource.create");
     }
 
     public function __show($item)
     {
-        $this->view = $this->repositoryName . '.show';
+        $this->view = sprintf('%s.show', $this->repositoryName);
         $this->compacts['item'] = $item;
         $this->compacts['heading'] = __("repositories.{$this->repositoryName}.resource.show");
     }
 
     public function __edit($item)
     {
-        $this->view = $this->repositoryName . '.edit';
+        $this->view = sprintf('%s.edit', $this->repositoryName);
         $this->compacts['item'] = $item;
         $this->compacts['heading'] = __("repositories.{$this->repositoryName}.resource.edit");
     }

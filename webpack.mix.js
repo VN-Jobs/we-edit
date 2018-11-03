@@ -13,6 +13,8 @@ const mix = require('laravel-mix');
 
 mix.js('resources/assets/js/backend.js', 'public/assets/js')
     .js('resources/assets/js/backend/modules/user.js', 'public/assets/js/backend/modules')
+    .js('resources/assets/js/backend/modules/category.js', 'public/assets/js/backend/modules')
     .sass('resources/assets/sass/backend/app.scss', 'public/assets/css/backend')
+    .sass('resources/assets/sass/backend/modules/category.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/login.scss', 'public/assets/css/backend');
 mix.copyDirectory('resources/assets/img', 'public/assets/img');

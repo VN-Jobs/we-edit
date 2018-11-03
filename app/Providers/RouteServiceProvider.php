@@ -26,6 +26,9 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind('user', function ($id) {
             return \Repo::resolve('user')->findOrFail($id);
         });
+        Route::bind('category', function ($id) {
+            return \Repo::resolve('category')->findOrFail($id);
+        });
 
         parent::boot();
     }

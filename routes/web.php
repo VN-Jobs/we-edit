@@ -16,5 +16,9 @@ Route::group(['namespace' => 'Backend'], function () {
     Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth']], function () {
         Route::get('/', 'HomeController@index')->name('home.index');
         Route::resource('user', 'UserController');
+        Route::resource('category', 'CategoryController', [
+            'except' => ['index', 'create', 'show']
+        ]);
+        Route::get('category/type/{type}', 'CategoryController@type')->name('category.type');
     });
 });

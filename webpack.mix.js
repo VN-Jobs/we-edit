@@ -18,3 +18,6 @@ mix.js('resources/assets/js/backend.js', 'public/assets/js')
     .sass('resources/assets/sass/backend/modules/category.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/login.scss', 'public/assets/css/backend');
 mix.copyDirectory('resources/assets/img', 'public/assets/img');
+
+mix.js('resources/assets/js/frontend.js', 'public/assets/js')
+    .sass('resources/assets/sass/frontend/app.scss', 'public/assets/css/frontend');

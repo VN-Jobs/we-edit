@@ -11,6 +11,21 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/about', function () {
+        return view('frontend.pages.about');
+    });
+    Route::get('/contact', function () {
+        return view('frontend.pages.contact');
+    });
+    // Route::get('category/type/{type}', 'CategoryController@type')->name('category.type');
+});
+
 Route::group(['namespace' => 'Backend'], function () {
     Auth::routes();
     Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth']], function () {

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
 use App\Contracts\Repositories\CategoryRepository;
 use App\Http\Requests\Backend\CategoryRequest;
 use App\Jobs\Category\StoreJob;

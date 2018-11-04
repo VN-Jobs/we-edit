@@ -26,7 +26,7 @@ return [
         'list' => 'Danh sách',
         'category' => 'Danh mục',
         'product' => 'Sản phẩm',
-        'post' => 'Tin tức',
+        'post' => 'Bài viết',
         'article' => 'Bài viết',
         'comment' => 'Bình luận',
         'page' => 'Trang',

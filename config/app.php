@@ -150,11 +150,6 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
 
         /*
-         * Package Service Providers...
-         */
-        Lord\Laroute\LarouteServiceProvider::class,
-
-        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,

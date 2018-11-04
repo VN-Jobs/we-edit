@@ -30,10 +30,12 @@ Route::group(['namespace' => 'Backend'], function () {
     Auth::routes();
     Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth']], function () {
         Route::get('/', 'HomeController@index')->name('home.index');
+        Route::post('summernote/image', 'HomeController@summernoteImage')->name('summernote.image');
         Route::resource('user', 'UserController');
         Route::resource('category', 'CategoryController', [
             'except' => ['index', 'create', 'show']
         ]);
         Route::get('category/type/{type}', 'CategoryController@type')->name('category.type');
+        Route::resource('post', 'PostController');
     });
 });

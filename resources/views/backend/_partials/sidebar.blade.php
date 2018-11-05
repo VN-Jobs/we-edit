@@ -27,6 +27,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('backend.slide.index') }}"> {{ __('repositories.slide.name') }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('backend.menu.index') }}"> {{ __('repositories.menu.name') }}</a>
+                    </li>
                 </ul>
             </li>
         </ul>

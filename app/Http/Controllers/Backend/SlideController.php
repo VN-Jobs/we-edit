@@ -75,14 +75,14 @@ class SlideController extends BackendController
         $data = $request->all();
 
         return $this->doRequest(function () use ($data, $item) {
-            return $this->dispatch(new UpdateJob($data, $item));
+            return $this->dispatchNow(new UpdateJob($data, $item));
         }, __FUNCTION__);
     }
 
     public function destroy($item)
     {
         return $this->doRequest(function () use ($item) {
-            return $this->dispatch(new DestroyJob($item));
+            return $this->dispatchNow(new DestroyJob($item));
         }, __FUNCTION__);
     }
 }

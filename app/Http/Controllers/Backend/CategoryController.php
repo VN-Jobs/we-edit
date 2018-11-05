@@ -43,7 +43,7 @@ class CategoryController extends BackendController
         $data = $request->all();
 
         return $this->doRequest(function () use ($data) {
-            return $this->dispatch(new StoreJob($data));
+            return $this->dispatchNow(new StoreJob($data));
         }, __FUNCTION__, false, url()->previous());
     }
 
@@ -60,7 +60,7 @@ class CategoryController extends BackendController
         $data = $request->all();
 
         return $this->doRequest(function () use ($data, $item) {
-            return $this->dispatch(new UpdateJob($data, $item));
+            return $this->dispatchNow(new UpdateJob($data, $item));
         }, __FUNCTION__, false, url()->previous());
     }
 

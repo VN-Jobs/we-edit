@@ -11,10 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/about', function () {
@@ -23,7 +19,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     Route::get('/contact', function () {
         return view('frontend.pages.contact');
     });
-    // Route::get('category/type/{type}', 'CategoryController@type')->name('category.type');
+    Route::get('category/{slug}', 'CategoryController@show')->name('category.show');
+    Route::get('category/type/{type}', 'CategoryController@type')->name('category.type');
 });
 
 Route::group(['namespace' => 'Backend'], function () {
@@ -38,5 +35,9 @@ Route::group(['namespace' => 'Backend'], function () {
         Route::get('category/type/{type}', 'CategoryController@type')->name('category.type');
         Route::resource('post', 'PostController');
         Route::resource('slide', 'SlideController');
+        Route::resource('menu', 'MenuController', [
+            'except' => ['show', 'create']
+        ]);
+        Route::POST('menu/serialize', 'MenuController@serialize')->name('menu.serialize');
     });
 });

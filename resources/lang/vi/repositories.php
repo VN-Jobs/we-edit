@@ -128,6 +128,7 @@ return [
     'button' => [
         'login' => 'Đăng nhập',
         'forgot_password' => 'Quên mật khẩu',
+        'serialize' => 'Sắp xếp',
     ],
 
     'actions' => [
@@ -142,6 +143,10 @@ return [
         'destroy' => [
             'successfully' => 'Xoá thành công.',
             'unsuccessfully' => 'Xoá thất bại.',
+        ],
+        'serialize' => [
+            'successfully' => 'Sắp xếp thành công.',
+            'unsuccessfully' => 'Sắp xếp thất bại.',
         ],
     ],
 

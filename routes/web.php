@@ -37,5 +37,6 @@ Route::group(['namespace' => 'Backend'], function () {
         ]);
         Route::get('category/type/{type}', 'CategoryController@type')->name('category.type');
         Route::resource('post', 'PostController');
+        Route::resource('slide', 'SlideController');
     });
 });

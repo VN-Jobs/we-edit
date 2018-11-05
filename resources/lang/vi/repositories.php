@@ -32,6 +32,7 @@ return [
         'page' => 'Trang',
         'summernote' => 'Thư viện',
         'image' => 'Hình ảnh',
+        'image_src' => 'Hình ảnh',
         'browse' => 'Chọn ảnh...',
         'social' => 'Mạng xã hội',
         'contact' => 'Liên hệ',
@@ -179,6 +180,10 @@ return [
         'banner' => 'Ảnh nền ( 1170x445 )',
         'image' => 'Ảnh đại diện ( 640 x 480 )',
         'icon' => 'Ảnh menu ( 100 x 100 )',
+    ],
+
+    'image_size' => [
+        'slide' => '( 1920x1100 )',
     ],
 
     'menu' => [

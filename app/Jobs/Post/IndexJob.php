@@ -46,6 +46,6 @@ class IndexJob extends Job
         $this->filterDatatable($datatables, $this->params);
         $this->columnDatatable($datatables, $repository->model);
 
-        return $datatables->make(true);;
+        return $datatables->make(true);
     }
 }

@@ -13,7 +13,7 @@ class PostRequest extends Request
      */
     public function rules()
     {
-        if ($this->user) {
+        if ($this->post) {
             return [
                 'name' => 'required|min:2|max:175',
                 'ceo_title' => 'nullable|max:200',

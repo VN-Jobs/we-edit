@@ -10,6 +10,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"> {{ __('repositories.product.name') }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('backend.category.type', 'product') }}"> {{ __('repositories.category.name') }}</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item">
@@ -20,6 +23,9 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('backend.user.index') }}"> {{ __('repositories.user.name') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('backend.slide.index') }}"> {{ __('repositories.slide.name') }}</a>
                     </li>
                 </ul>
             </li>

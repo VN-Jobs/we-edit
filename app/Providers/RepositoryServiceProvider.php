@@ -28,6 +28,10 @@ class RepositoryServiceProvider extends ServiceProvider
             \App\Contracts\Repositories\MenuRepository::class,
             \App\Repositories\MenuRepositoryEloquent::class,
         ],
+        'contact' => [
+            \App\Contracts\Repositories\ContactRepository::class,
+            \App\Repositories\ContactRepositoryEloquent::class,
+        ],
     ];
     /**
      * Bootstrap services.

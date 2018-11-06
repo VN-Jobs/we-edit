@@ -30,6 +30,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('backend.menu.index') }}"> {{ __('repositories.menu.name') }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('backend.config.index') }}"> {{ __('repositories.config.name') }}</a>
+                    </li>
                 </ul>
             </li>
         </ul>

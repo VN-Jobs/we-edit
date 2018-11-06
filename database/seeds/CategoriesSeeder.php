@@ -12,6 +12,7 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
+        Category::truncate();
         if (App::environment('local')) {
             $categories = factory(Category::class, 20)->create();
         }

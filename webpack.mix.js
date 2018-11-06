@@ -18,13 +18,17 @@ mix.js('resources/assets/js/backend.js', 'public/assets/js')
     .js('resources/assets/js/backend/modules/slide.js', 'public/assets/js/backend/modules')
     .js('resources/assets/js/backend/modules/menu.js', 'public/assets/js/backend/modules')
     .js('resources/assets/js/backend/modules/home.js', 'public/assets/js/backend/modules')
+    .js('resources/assets/js/backend/modules/config.js', 'public/assets/js/backend/modules')
     .sass('resources/assets/sass/backend/app.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/category.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/post.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/slide.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/menu.scss', 'public/assets/css/backend')
+    .sass('resources/assets/sass/backend/modules/home.scss', 'public/assets/css/backend')
+    .sass('resources/assets/sass/backend/modules/config.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/login.scss', 'public/assets/css/backend');
 mix.copyDirectory('resources/assets/img', 'public/assets/img');
+mix.copyDirectory('resources/assets/seeds', 'public/statics/files/seeds');
 mix.copy('resources/assets/bower/summernote/dist/summernote.min.js', 'public/assets/js/backend/summernote.min.js');
 mix.js('resources/assets/js/frontend.js', 'public/assets/js')
     .sass('resources/assets/sass/frontend/app.scss', 'public/assets/css/frontend');

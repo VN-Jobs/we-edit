@@ -12,6 +12,8 @@ class Contact extends Model
         'email',
         'company',
         'message',
+        'is_home',
+        'avatar',
     ];
 
     public function scopeByKeywords($query, $keywords)

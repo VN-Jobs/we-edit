@@ -25,6 +25,7 @@ class IndexJob extends Job
         'email',
         'company',
         'message',
+        'is_home',
     ];
 
     public function __construct(array $params)
@@ -44,14 +45,7 @@ class IndexJob extends Job
             ->scopeDatatables($this->dataSelect));
 
         $this->filterDatatable($datatables, $this->params);
-        $datatables->addColumn('actions', function ($item) {
-            $actions['delete'] = [
-                'uri' => route(sprintf('%shome.destroy', $this->prefix), $item->id),
-                'label' => __('repositories.title.delete'),
-            ];
-
-            return $actions;
-        });
+        $this->columnDatatable($datatables, 'home');
 
         return $datatables->make(true);
     }

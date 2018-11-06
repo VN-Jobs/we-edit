@@ -12,6 +12,7 @@ class PostsSeeder extends Seeder
      */
     public function run()
     {
+        Post::truncate();
         if (App::environment('local')) {
             factory(Post::class, 50)->create();
         }

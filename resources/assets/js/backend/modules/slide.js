@@ -45,7 +45,7 @@ class Slide {
     });
   }
 
-  form() {
+  form () {
     var _$ = window.jQuery;
     var uploadfile = new Uploadfile();
     uploadfile.init();

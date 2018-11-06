@@ -5,7 +5,7 @@ import '../../../bower/jqTree/build/tree.jquery';
 import Notification from './../partials/notification';
 
 class Menu {
-  index(items, item) {
+  index (items, item) {
     var notification = new Notification();
     this.jqTree(items, item);
     this.getUrlFromSelect();
@@ -15,7 +15,7 @@ class Menu {
     notification.flashMessage();
   }
 
-  serializeMenu(notification) {
+  serializeMenu (notification) {
     var _$ = window.$;
     _$('#save-serialize').on('click', function (e) {
       e.preventDefault();
@@ -30,7 +30,7 @@ class Menu {
     });
   }
 
-  getUrlFromSelect() {
+  getUrlFromSelect () {
     var _$ = window.$;
     _$('select[name=category_id]').on('change', function () {
       let url = this.value;
@@ -41,7 +41,7 @@ class Menu {
   }
 
 
-  jqTree(items, item, selector = '#list') {
+  jqTree (items, item, selector = '#list') {
     var _$ = window.$;
     _$(selector).tree({
       closedIcon: _$('<i class="ion-plus"></i>'),
@@ -60,6 +60,10 @@ class Menu {
       },
       onCreateLi: function(node, $li) {
         if (item != 0 && item.id == node.id) {
+          return false;
+        }
+
+        if (node.locked) {
           return false;
         }
         $li.find('.jqtree-element')

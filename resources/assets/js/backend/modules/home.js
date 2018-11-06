@@ -2,16 +2,27 @@
 'use strict';
 
 import Datatable from './../partials/datatable';
+import Uploadfile from './../partials/uploadfile';
 class Home {
   index () {
     var _$ = window.$;
     let columns = [
       { data: 'id', name: 'id', visible: false },
-      { data: 'first_name', name: 'first_name' },
-      { data: 'last_name', name: 'last_name'},
+      { data: 'name',
+        name: 'name',
+        render:function (data, type, row) {
+          return row.first_name + ' ' + row.last_name;
+        }
+      },
       { data: 'email', name: 'email'},
       { data: 'company', name: 'company'},
-      { data: 'message', name: 'message'}
+      { data: 'message', name: 'message'},
+      { data: 'is_home',
+        name: 'is_home',
+        render:function (data, type, row) {
+          return row.is_home == 1 ? '<span class="label label-primary">ON</span>' : '';
+        }
+      },
     ];
     let searches = {
       data: function (d) {
@@ -31,6 +42,12 @@ class Home {
       _$('input').val('');
       datatable.refresh();
     });
+  }
+
+  form () {
+    var _$ = window.$;
+    var uploadfile = new Uploadfile();
+    uploadfile.init();
   }
 }
 

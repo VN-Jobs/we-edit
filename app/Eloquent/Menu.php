@@ -11,6 +11,7 @@ class Menu extends Model
         'url',
         'sort',
         'parent_id',
+        'locked',
     ];
 
     public function children()

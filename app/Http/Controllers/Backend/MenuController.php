@@ -64,6 +64,9 @@ class MenuController extends BackendController
     public function destroy($item)
     {
         return $this->doRequest(function () use ($item) {
+            if ($item->locked) {
+                throw new \Exception();
+            }
             $status = $this->repository->delete($item);
             if (!$status) {
                 throw new \Exception();

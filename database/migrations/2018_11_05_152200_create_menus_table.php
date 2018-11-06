@@ -19,6 +19,7 @@ class CreateMenusTable extends Migration
             $table->string('url');
             $table->tinyInteger('sort')->default(0);
             $table->integer('parent_id')->default(0)->index();
+            $table->boolean('locked')->default(false);
             $table->timestamps();
         });
     }

@@ -127,6 +127,7 @@ return [
         'is_page' => 'Landing page',
         'district' => 'Tỉnh',
         'is_redirect' => 'Chuyển tới CT',
+        'avatar' => 'Avatar',
     ],
 
     'button' => [
@@ -160,10 +161,6 @@ return [
         'cancel' => 'Huỷ',
     ],
 
-    'home' => [
-        'name' => 'Liên hệ',
-    ],
-
     'user' => [
         'name' => 'Thành viên',
         'roles' => 'Danh sách vai trò',
@@ -175,10 +172,11 @@ return [
         ]
     ],
 
-    'contact' => [
+    'home' => [
         'name' => 'Liên hệ',
         'resource' => [
             'index' => 'Thông tin liên hệ',
+            'edit' => 'Cập nhật liên hệ',
         ],
     ],
 
@@ -191,6 +189,9 @@ return [
 
     'image_size' => [
         'slide' => '( 1920x1100 )',
+        'banner' => '( 1440x300 )',
+        'banner_contact' => '( 555x278 )',
+        'avatar' => '( 155x155 )',
     ],
 
     'menu' => [
@@ -202,10 +203,10 @@ return [
 
     'page' => [
         'name' => 'Trang',
-        'introduce' => 'Gới thiệu',
-        'distributor' => 'Hệ thống phân phối',
-        'investor' => 'Cổ đông & nhà đầu tư',
-        'recruitment' => 'Tuyển dụng',
+        'home' => 'Trang chủ',
+        'about' => 'About',
+        'blog' => 'Blog',
+        'contact' => 'Contact',
         'resource' => [
             'index' => 'Danh sách trang',
             'create' => 'Tạo mới trang',

@@ -35,11 +35,11 @@
                             <thead>
                                 <tr>
                                     <th style="display:none">ID</th>
-                                    <th>{{ __('repositories.label.first_name') }}</th>
-                                    <th>{{ __('repositories.label.last_name') }}</th>
+                                    <th>{{ __('repositories.label.name') }}</th>
                                     <th>{{ __('repositories.label.email') }}</th>
                                     <th>{{ __('repositories.label.company') }}</th>
                                     <th>{{ __('repositories.label.message') }}</th>
+                                    <th>{{ __('repositories.label.is_home') }}</th>
                                     <th>{{ __('repositories.label.action') }}</th>
                                 </tr>
                             </thead>

@@ -41,7 +41,7 @@ class Post {
     });
   }
 
-  form() {
+  form () {
     var _$ = window.$;
     var uploadfile = new Uploadfile();
     uploadfile.init();

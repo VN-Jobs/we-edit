@@ -12,7 +12,7 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('users')->truncate();
+        User::truncate();
         $user = app(User::class)->create([
             'username' => 'admin',
             'name' => 'Admin',

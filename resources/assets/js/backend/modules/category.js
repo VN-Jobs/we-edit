@@ -4,7 +4,7 @@
 import '../../../bower/jqTree/build/tree.jquery';
 import Notification from './../partials/notification';
 class Category {
-  index(items, item) {
+  index (items, item) {
     var notification = new Notification();
     this.jqTree(items, item);
 
@@ -12,7 +12,7 @@ class Category {
     notification.flashMessage();
   }
 
-  jqTree(items, item, selector = '#list') {
+  jqTree (items, item, selector = '#list') {
     var _$ = window.$;
     _$(selector).tree({
       closedIcon: _$('<i class="ion-plus"></i>'),

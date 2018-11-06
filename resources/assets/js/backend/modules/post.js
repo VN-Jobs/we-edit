@@ -59,7 +59,7 @@ class Post {
         ['view', ['fullscreen', 'codeview']],
         ['help', ['help']]
       ],
-      height:400,
+      height:600,
       callbacks: {
         onImageUpload: function(files) {
           uploadfile.sendImage(files[0], laroute.route('backend.summernote.image'), _$(this));

@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Jobs\User;
+namespace App\Jobs\Contact;
 
 use App\Jobs\Job;
 use Yajra\DataTables\Facades\DataTables;
-use App\Contracts\Repositories\UserRepository;
+use App\Contracts\Repositories\ContactRepository;
 use App\Traits\DatatableTrait;
 
 class IndexJob extends Job
 {
     use DatatableTrait;
+
     /**
      * Create a new job instance.
      *
@@ -19,9 +20,11 @@ class IndexJob extends Job
 
     protected $dataSelect = [
         'id',
-        'username',
-        'name',
+        'first_name',
+        'last_name',
         'email',
+        'company',
+        'message',
     ];
 
     public function __construct(array $params)
@@ -35,13 +38,20 @@ class IndexJob extends Job
      *
      * @return void
      */
-    public function handle(UserRepository $repository)
+    public function handle(ContactRepository $repository)
     {
         $datatables = DataTables::of($repository
             ->scopeDatatables($this->dataSelect));
 
         $this->filterDatatable($datatables, $this->params);
-        $this->columnDatatable($datatables, $repository->model);
+        $datatables->addColumn('actions', function ($item) {
+            $actions['delete'] = [
+                'uri' => route(sprintf('%shome.destroy', $this->prefix), $item->id),
+                'label' => __('repositories.title.delete'),
+            ];
+
+            return $actions;
+        });
 
         return $datatables->make(true);
     }

@@ -27,6 +27,7 @@ Route::group(['namespace' => 'Backend'], function () {
     Auth::routes();
     Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth']], function () {
         Route::get('/', 'HomeController@index')->name('home.index');
+        Route::delete('home/{contact}', 'HomeController@destroy')->name('home.destroy');
         Route::post('summernote/image', 'HomeController@summernoteImage')->name('summernote.image');
         Route::resource('user', 'UserController');
         Route::resource('category', 'CategoryController', [
@@ -38,6 +39,6 @@ Route::group(['namespace' => 'Backend'], function () {
         Route::resource('menu', 'MenuController', [
             'except' => ['show', 'create']
         ]);
-        Route::POST('menu/serialize', 'MenuController@serialize')->name('menu.serialize');
+        Route::post('menu/serialize', 'MenuController@serialize')->name('menu.serialize');
     });
 });

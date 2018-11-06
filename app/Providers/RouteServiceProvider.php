@@ -38,6 +38,9 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind('menu', function ($id) {
             return \Repo::resolve('menu')->findOrFail($id);
         });
+        Route::bind('contact', function ($id) {
+            return \Repo::resolve('contact')->findOrFail($id);
+        });
 
         parent::boot();
     }

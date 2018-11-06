@@ -80,6 +80,10 @@ return [
         'username' => 'Tên đăng nhập',
         'category_id' => 'Danh mục',
         'category_ids' => 'Nhóm sản phẩm',
+        'first_name' => 'First Name',
+        'last_name' => 'Last Name',
+        'company' => 'Công ty',
+        'message' => 'Thông điệp',
         'name' => 'Tên',
         'email' => 'Email',
         'action' => 'Thao tác',
@@ -171,13 +175,11 @@ return [
         ]
     ],
 
-    'role' => [
-        'name' => 'Vai trò',
+    'contact' => [
+        'name' => 'Liên hệ',
         'resource' => [
-            'index' => 'Danh sách vai trò',
-            'create' => 'Tạo mới vai trò',
-            'edit' => 'Cập nhật vai trò',
-        ]
+            'index' => 'Thông tin liên hệ',
+        ],
     ],
 
     'category' => [
@@ -209,10 +211,6 @@ return [
             'create' => 'Tạo mới trang',
             'edit' => 'Cập nhật trang',
         ]
-    ],
-
-    'contact' => [
-        'name' => 'Liên hệ',
     ],
 
     'comment' => [

@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Cache;
+use App\Contracts\Repositories\ConfigRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,6 +37,12 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('backend.*', function ($view) {
             $view->with('me', \Auth::guard('backend')->user());
+        });
+
+        view()->composer('frontend.*', function ($view) {
+            $view->with('configs', Cache::remember('configs', 60, function () {
+                return app(ConfigRepository::class)->getData()->pluck('value', 'key');
+            }));
         });
     }
 }

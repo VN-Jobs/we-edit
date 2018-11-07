@@ -4,70 +4,70 @@
             <div class="row">
                 <div class="col-md-6">
                     {{ Form::label('name', __('repositories.label.title'), ['class'=>'control-label']) }}<span class="require">*</span>
-                    {{ Form::text('name', $items->keyBy('key')['name']['value'][0] ?? null, ['class' => 'form-control']) }}
+                    {{ Form::text('name[]', $items->keyBy('key')['name']['value'][0] ?? null, ['class' => 'form-control']) }}
                 </div>
 
                 <div class="col-md-6">
                     {{ Form::label('keywords', __('repositories.label.ceo_keywords'), ['class'=>'control-label']) }}
-                    {{ Form::text('keywords', $items->keyBy('key')['keywords']['value'][0] ?? null, ['class' => 'form-control']) }}
+                    {{ Form::text('keywords[]', $items->keyBy('key')['keywords']['value'][0] ?? null, ['class' => 'form-control']) }}
                 </div>
             </div>
         </div>
         <div class="form-group">
             {{ Form::label('description', __('repositories.label.ceo_description'), ['class'=>'control-label']) }}
-            {{ Form::textarea('description', $items->keyBy('key')['description']['value'][0] ?? null, ['class' => 'form-control', 'rows' => 2]) }}
+            {{ Form::textarea('description[]', $items->keyBy('key')['description']['value'][0] ?? null, ['class' => 'form-control', 'rows' => 2]) }}
         </div>
         <div class="form-group">
             {{ Form::label('home', 'WHO WE ARE?', ['class'=>'control-label']) }}
-            {{ Form::textarea('home', $items->keyBy('key')['home']['value']['who_we_are'] ?? null, ['class' => 'form-control', 'rows' => 6]) }}
+            {{ Form::textarea('home[who_we_are]', $items->keyBy('key')['home']['value']['who_we_are'] ?? null, ['class' => 'form-control', 'rows' => 6]) }}
         </div>
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
                     {{ Form::label('home', 'TWILIGHT', ['class'=>'control-label']) }}
-                    {{ Form::textarea('home', $items->keyBy('key')['home']['value']['icons']['twilight'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
+                    {{ Form::textarea('home[icons][twilight]', $items->keyBy('key')['home']['value']['icons']['twilight'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
                 <div class="col-md-6">
                     {{ Form::label('home', 'REMOVE ITEM', ['class'=>'control-label']) }}
-                    {{ Form::textarea('home', $items->keyBy('key')['home']['value']['icons']['remove_item'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
+                    {{ Form::textarea('home[icons][remove_item]', $items->keyBy('key')['home']['value']['icons']['remove_item'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
                 <div class="col-md-6">
                     {{ Form::label('home', 'DAY TO DUSK', ['class'=>'control-label']) }}
-                    {{ Form::textarea('home', $items->keyBy('key')['home']['value']['icons']['day_to_dusk'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
+                    {{ Form::textarea('home[icons][day_to_dusk]', $items->keyBy('key')['home']['value']['icons']['day_to_dusk'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
                 <div class="col-md-6">
                     {{ Form::label('home', 'IMAGE ENHANCEMENT', ['class'=>'control-label']) }}
-                    {{ Form::textarea('home', $items->keyBy('key')['home']['value']['icons']['image_enhancement'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
+                    {{ Form::textarea('home[icons][image_enhancement]', $items->keyBy('key')['home']['value']['icons']['image_enhancement'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
             </div>
         </div>
         <div class="form-group">
             {{ Form::label('home', 'ABOUT US', ['class'=>'control-label']) }}
-            {{ Form::textarea('home', $items->keyBy('key')['home']['value']['about_us'] ?? null, ['class' => 'form-control', 'rows' => 10]) }}
+            {{ Form::textarea('home[about_us]', $items->keyBy('key')['home']['value']['about_us'] ?? null, ['class' => 'form-control', 'rows' => 10]) }}
         </div>
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
                     {{ Form::label('email', __('repositories.label.email'), ['class'=>'control-label']) }}
-                    {{ Form::text('email', $items->keyBy('key')['email']['value'][0] ?? null, ['class' => 'form-control']) }}
+                    {{ Form::text('email[]', $items->keyBy('key')['email']['value'][0] ?? null, ['class' => 'form-control']) }}
                 </div>
                 <div class="col-md-6">
                     {{ Form::label('phone', __('repositories.label.phone'), ['class'=>'control-label']) }}
-                    {{ Form::text('phone', $items->keyBy('key')['phone']['value'][0] ?? null, ['class' => 'form-control']) }}
+                    {{ Form::text('phone[]', $items->keyBy('key')['phone']['value'][0] ?? null, ['class' => 'form-control']) }}
                 </div>
             </div>
         </div>
         <div class="form-group">
             {{ Form::label('address', __('repositories.label.address'), ['class'=>'control-label']) }}
-            {{ Form::textarea('address', $items->keyBy('key')['address']['value'][0] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
+            {{ Form::textarea('address[]', $items->keyBy('key')['address']['value'][0] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
         </div>
         <div class="form-group">
             {{ Form::label('analytics_id', 'Google Analytics ID', ['class'=>'control-label']) }}
-            {{ Form::text('analytics_id', $items->keyBy('key')['analytics_id']['value'][0] ?? null, ['class' => 'form-control', 'placeholder' => 'Google Analytics Id']) }}
+            {{ Form::text('analytics_id[]', $items->keyBy('key')['analytics_id']['value'][0] ?? null, ['class' => 'form-control', 'placeholder' => 'Google Analytics Id']) }}
         </div>
         <div class="form-group">
             {{ Form::label('copyright', __('repositories.label.copyright'), ['class'=>'control-label']) }}
-            {{ Form::text('copyright', $items->keyBy('key')['copyright']['value'][0] ?? null, ['class' => 'form-control']) }}
+            {{ Form::text('copyright[]', $items->keyBy('key')['copyright']['value'][0] ?? null, ['class' => 'form-control']) }}
         </div>
     </div>
     <div class="col-sm-4">
@@ -79,7 +79,7 @@
             <div class="panel-body">
                 <div class="form-group">
                     {{ Form::label('map', __('repositories.label.map'), ['class'=>'control-label']) }}
-                    {{ Form::text('map', $items->keyBy('key')['map']['value'][0] ?? null, ['class' => 'form-control']) }}
+                    {{ Form::text('map[]', $items->keyBy('key')['map']['value'][0] ?? null, ['class' => 'form-control']) }}
                     <iframe frameborder="0" style="width:100%;height:250px;border:0;" src="{{ $items->keyBy('key')['map']['value'][0] ?? null }}" allowfullscreen="allowfullscreen"></iframe>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                     {{ Form::label('name', __('repositories.label.logo'), ['class' => 'control-label']) }}
                     @component('backend._partials.components.uploadfile', ['imgFields' => $items->keyBy('key')['logo']['value'][0] ?? null])
                     @slot('uploadFields')
-                        {{ Form::file('logo', ['id' => 'image']) }}
+                        {{ Form::file('logo[]', ['id' => 'image']) }}
                     @endslot
                     @endcomponent
                 </div>

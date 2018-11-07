@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Jobs\Config\StoreJob;
 use App\Contracts\Repositories\ConfigRepository;
+use App\Http\Requests\Backend\ConfigRequest;
+use App\Jobs\Config\UpdateJob;
 
 class ConfigController extends BackendController
 {
@@ -23,8 +25,12 @@ class ConfigController extends BackendController
         return $this->viewRender();
     }
 
-    public function store(Request $request)
+    public function store(ConfigRequest $request)
     {
-        return $request->all();
+        $data = $request->all();
+
+        return $this->doRequest(function () use ($data) {
+            return $this->dispatchNow(new UpdateJob($data));
+        }, __FUNCTION__, false, url()->previous());
     }
 }

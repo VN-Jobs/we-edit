@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->string('slug', 100)->index()->unique();
-            $table->char('type', 20)->default('post');
+            $table->char('type', 20)->default('product');
             $table->text('description')->nullable();
             $table->boolean('locked')->default(false);
             $table->timestamps();

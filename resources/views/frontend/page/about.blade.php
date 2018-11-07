@@ -1,9 +1,8 @@
 @extends('layouts.frontend')
 
-@section('title', isset($heading) ? $heading : __('repositories.index'))
+@section('title', isset($heading) ? $heading : __('repositories.page.about'))
 
 @section('page-content')
-
     <main class="site-main bg-grey">
         <div class="page-header blog-bg-image">
             <div class="container">

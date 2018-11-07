@@ -30,5 +30,7 @@ class StoreJob extends Job
         $data = array_only($this->params, $repository->model->getFillable());
 
         $repository->create($data);
+
+        \Cache::forget('__menus');
     }
 }

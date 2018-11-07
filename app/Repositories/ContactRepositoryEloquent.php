@@ -18,4 +18,13 @@ class ContactRepositoryEloquent extends AbstractRepositoryEloquent implements Co
             ->select($columns)
             ->with($with);
     }
+
+    public function getTestimonials($limit, $columns = ['*'])
+    {
+        return $this->model
+            ->where('is_home', true)
+            ->orderByDesc('updated_at')
+            ->take($limit)
+            ->get($columns);
+    }
 }

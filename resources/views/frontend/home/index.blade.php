@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', isset($heading) ? $heading : __('repositories.index'))
+@section('title', $configs['name'][0] ?? null)
 
 @section('page-content')
     <main class="site-main">

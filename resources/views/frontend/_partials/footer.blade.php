@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="f-col f-logo-wrapper col-sm-12 col-md-12 col-lg-3 col-xl-3">
                     <a href="#" class="f-logo">
-                        <img src="images/logo.png" alt="we-edit.com" />
+                        <img src="{{ publicSrc($configs['logo'][0] ?? null) }}" alt="we-edit.com" />
                     </a>
                     <ul class="social horizontal">
                         <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-label="Facebook"></i></a></li>

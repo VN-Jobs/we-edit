@@ -128,6 +128,16 @@ return [
         'district' => 'Tỉnh',
         'is_redirect' => 'Chuyển tới CT',
         'avatar' => 'Avatar',
+        'about_banner' => 'Banner About',
+        'blog_banner' => 'Banner Blog',
+        'contact_banner' => 'Banner Contact',
+        'contact_banner_1' => 'Customer Service Banner',
+        'contact_banner_2' => 'Contact Information Banner',
+        'facebook' => 'Facebook',
+        'youtube' => 'Youtube',
+        'linkedin' => 'Linkedin',
+        'twitter' => 'Twitter',
+        'instagram' => 'Instagram',
     ],
 
     'button' => [

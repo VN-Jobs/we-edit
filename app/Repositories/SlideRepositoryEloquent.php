@@ -18,4 +18,14 @@ class SlideRepositoryEloquent extends AbstractRepositoryEloquent implements Slid
             ->select($columns)
             ->with($with);
     }
+
+    public function getDataByCategory($limit, $categoryId, $columns = ['*'])
+    {
+        return $this->model
+            ->where('locked', false)
+            ->where('category_id', $categoryId)
+            ->orderByDesc('updated_at')
+            ->take($limit)
+            ->get($columns);
+    }
 }

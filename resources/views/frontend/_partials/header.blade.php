@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row">
                 <a class="site-logo col-6 col-sm-6 col-md-6 col-lg-2" href="index.html">
-                    <img class="logo" src="images/logo.png" alt="we-edit.com">
+                    <img class="logo" src="{{ publicSrc($configs['logo'][0] ?? null) }}" alt="we-edit.com">
                 </a>
                 <div class="main-menu col-6 col-sm-6 col-md-6 col-lg-10">
                     <div id="offcanvas-toggler" class="d-lg-none d-xl-none">

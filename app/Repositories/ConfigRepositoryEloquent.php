@@ -19,6 +19,6 @@ class ConfigRepositoryEloquent extends AbstractRepositoryEloquent implements Con
 
     public function findByKey($key)
     {
-        return $this->model->whereKey($key)->first();
+        return $this->model->where('key', $key)->first();
     }
 }

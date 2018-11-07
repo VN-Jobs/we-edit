@@ -32,5 +32,7 @@ class UpdateJob extends Job
         $data = array_only($this->params, $repository->model->getFillable());
 
         $repository->update($this->item, $data);
+
+        \Cache::forget('__menus');
     }
 }

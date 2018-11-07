@@ -28,6 +28,7 @@ class SerializeJob extends Job
     public function handle(MenuRepository $repository)
     {
         $this->recursive($repository, json_decode($this->params['serialize']));
+        \Cache::forget('__menus');
     }
 
     public function recursive(MenuRepository $repository, array $data, $parent = 0, $order = 0)

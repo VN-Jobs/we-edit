@@ -16,4 +16,9 @@ class CategoryRepositoryEloquent extends AbstractRepositoryEloquent implements C
     {
         return $this->model->where('type', $type)->get($columns);
     }
+
+    public function getRandom($limit, $columns = ['*'])
+    {
+        return $this->model->inRandomOrder()->take($limit)->get($columns);
+    }
 }

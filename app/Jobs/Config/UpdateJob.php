@@ -85,5 +85,8 @@ class UpdateJob extends Job
                 ]);
             }
         }
+
+        \Cache::forget('configs');
+        \Cache::forget('__categories');
     }
 }

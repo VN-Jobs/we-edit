@@ -20,9 +20,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
         return view('frontend.page.contact');
     })->name('contact');
 
-    Route::get('/blog', function () {
-        return view('frontend.blog.index');
-    })->name('blog');
+    Route::get('/blog', 'PostController@index')->name('blog');
     Route::get('category/{slug}', 'CategoryController@show')->name('category.show');
 });
 

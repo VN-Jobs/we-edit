@@ -21,6 +21,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     })->name('contact');
 
     Route::get('/blog', 'PostController@index')->name('blog');
+    Route::get('/blog/{slug}', 'PostController@show')->name('blog.show');
     Route::get('category/{slug}', 'CategoryController@show')->name('category.show');
 });
 

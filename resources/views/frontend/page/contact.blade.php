@@ -5,7 +5,7 @@
 @section('page-content')
 
     <main class="site-main bg-grey">
-        <div class="page-header blog-bg-image">
+        <div class="page-header blog-bg-image" style="background-image: url({{ publicSrc($configs['contact']['banner']) }});">
             <div class="container">
                 <h2 class="page-header-title">Contact us</h2>
                 <p class="page-header-desc">{{ $configs['contact']['description'] ?? null }}</p>

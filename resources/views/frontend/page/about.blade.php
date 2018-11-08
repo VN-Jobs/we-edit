@@ -4,7 +4,7 @@
 
 @section('page-content')
     <main class="site-main bg-grey">
-        <div class="page-header blog-bg-image">
+        <div class="page-header blog-bg-image" style="background-image: url({{ publicSrc($configs['about']['banner']) }});">
             <div class="container">
                 <h2 class="page-header-title">About us</h2>
                 <p class="page-header-desc">{!! $configs['about']['description'] ?? null !!}</p>

@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', isset($heading) ? $heading : __('repositories.title.contact'))
+@section('title', isset($heading) ? $heading : __('repositories.frontend.contact'))
 
 @section('page-content')
 

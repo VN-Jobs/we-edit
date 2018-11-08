@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', isset($heading) ? $heading : __('repositories.title.post'))
+@section('title', isset($heading) ? $heading : __('repositories.frontend.post'))
 
 @section('page-content')
     <main class="site-main blog-wrapper">
@@ -17,13 +17,13 @@
                         <div class="post col-md-6 col-lg-6 col-xl-6">
                             <a class="post-image" href="{{ route('blog.show', $post->slug) }}">
                                 @if ($post->image_src)
-                                    <img src="{{ publicSrc($post->image_src) }}" alt="{{ $post->name }}">
+                                    <img src="{{ publicSrc($post->image_src) }}" alt="{{ $post->image_title }}">
                                 @endif
                             </a>
                             <div class="post-content">
                                 <div class="post-info">
                                     <span class="icon-date"><img width="20" height="17" alt="calendar icon" src="/assets/img/calendar.svg" /></span>
-                                    <span class="post-date">18 July 2018</span>
+                                    <span class="post-date">{{ $post->updated_at->format(config('common.date.blog')) }}</span>
                                 </div>
 
                                 <h3 class="post-title">
@@ -31,7 +31,7 @@
                                 </h3>
 
                                 <div class="post-description">
-                                    <p>{!! $post->description !!}</p>
+                                    <p>{{ $post->ceo_description }}</p>
                                     <a class="readmore" href="{{ route('blog.show', $post->slug) }}">Read More</a>
                                 </div>
                             </div>

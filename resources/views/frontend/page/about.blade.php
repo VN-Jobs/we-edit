@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', isset($heading) ? $heading : __('repositories.page.about'))
+@section('title', isset($heading) ? $heading : __('repositories.frontend.about'))
 
 @section('page-content')
     <main class="site-main bg-grey">

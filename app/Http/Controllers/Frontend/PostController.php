@@ -16,7 +16,7 @@ class PostController extends FrontendController
     public function index(Request $request)
     {
         $this->view = 'blog.index';
-        $this->compacts['heading'] = __('repositories.title.post');
+        $this->compacts['heading'] = __('repositories.frontend.post');
         $this->compacts['posts'] = $this->repository->scopeDatatables()->limit(6)->latest()->get();
 
         return $this->viewRender();
@@ -25,8 +25,8 @@ class PostController extends FrontendController
     public function show($slug)
     {
         $this->view = 'blog.show';
-        $this->compacts['heading'] = __('repositories.title.post');
         $this->compacts['post'] = $this->repository->findBySlug($slug);
+        $this->compacts['heading'] = $this->compacts['post']->name;
 
         return $this->viewRender();
     }

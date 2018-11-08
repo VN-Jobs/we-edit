@@ -11,4 +11,7 @@ return [
     'contact' => [
         'limit' => 5,
     ],
+    'date' => [
+        'blog' => 'd F Y',
+    ],
 ];

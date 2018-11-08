@@ -202,6 +202,7 @@ return [
         'banner' => '( 1440x300 )',
         'banner_contact' => '( 555x278 )',
         'avatar' => '( 155x155 )',
+        'blog' => '( 353x88 )',
     ],
 
     'menu' => [
@@ -265,5 +266,11 @@ return [
         'resource' => [
             'index' => 'Cài đặt tổng thể',
         ]
+    ],
+
+    'frontend' => [
+        'post' => 'Blog',
+        'contact' => 'Contact',
+        'about' => 'About Us',
     ],
 ];

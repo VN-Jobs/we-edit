@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriesTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ceo_title', 100)->nullable();
-            $table->string('ceo_description', 200)->nullable();
-            $table->string('ceo_keywords', 150)->nullable();
             $table->string('name', 100);
-            $table->string('slug', 100)->index()->unique();
-            $table->char('type', 20)->default('product');
-            $table->string('collection_title')->nullable();
-            $table->string('collection_intro')->nullable();
+            $table->string('image_src')->nullable();
+            $table->string('image_title')->nullable();
+            $table->string('image_ba_src')->nullable();
+            $table->string('image_ba_title')->nullable();
             $table->text('description')->nullable();
+            $table->text('intro')->nullable();
+            $table->string('price')->nullable();
+            $table->boolean('is_home')->default(false);
             $table->boolean('locked')->default(false);
+            $table->integer('category_id')->index()->unsigned();
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('products');
     }
 }

@@ -9,6 +9,13 @@ use App\Jobs\Category\UpdateJob;
 
 class CategoryController extends BackendController
 {
+    protected $selectData = [
+        'id',
+        'name',
+        'description',
+        'type',
+        'locked',
+    ];
     public function __construct(CategoryRepository $category)
     {
         parent::__construct($category);
@@ -26,7 +33,7 @@ class CategoryController extends BackendController
             __("repositories.title.{$type}")
         );
         $this->compacts['action'] = __("repositories.title.{$action}");
-        $this->compacts['items'] = $this->repository->getDataByType($type);
+        $this->compacts['items'] = $this->repository->getDataByType($type, $this->selectData);
 
         return $this->viewRender();
     }

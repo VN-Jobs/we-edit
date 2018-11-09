@@ -138,6 +138,9 @@ return [
         'linkedin' => 'Linkedin',
         'twitter' => 'Twitter',
         'instagram' => 'Instagram',
+        'price' => 'Giá',
+        'intro' => 'Mô tả ngắn',
+        'image_ba' => 'Before to After',
     ],
 
     'button' => [
@@ -202,7 +205,9 @@ return [
         'banner' => '( 1440x300 )',
         'banner_contact' => '( 555x278 )',
         'avatar' => '( 155x155 )',
-        'blog' => '( 353x88 )',
+        'blog' => '( 540x135 )',
+        'product' => '( 255x169 )',
+        'product_ba' => '( 960x450 )',
     ],
 
     'menu' => [

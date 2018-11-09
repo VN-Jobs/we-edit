@@ -1,4 +1,9 @@
 @import "./../partials/uploadfile";
-@import "./../partials/dropzone";
-@import "../../../bower/summernote/dist/summernote";
-@import "../../../bower/grid-editor/dist/grideditor";
+
+#img-upload {
+    height: 234px;
+}
+
+#image_ba-upload {
+    height: 198px;
+}

@@ -1,5 +1,17 @@
 @include('backend._partials.components.errors')
 <div class="form-group">
+    {{ Form::label('ceo_title', __('repositories.label.ceo_title'), ['class'=>'control-label']) }}
+    {{ Form::text('ceo_title', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.ceo_title')]) }}
+</div>
+<div class="form-group">
+    {{ Form::label('ceo_keywords', __('repositories.label.ceo_keywords'), ['class'=>'control-label']) }}
+    {{ Form::text('ceo_keywords', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.ceo_keywords')]) }}
+</div>
+<div class="form-group">
+    {{ Form::label('ceo_description', __('repositories.label.ceo_description'), ['class'=>'control-label']) }}
+    {{ Form::textarea('ceo_description', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => __('repositories.label.ceo_description')]) }}
+</div>
+<div class="form-group">
     {{ Form::label('name', __('repositories.label.title'), [ 'class' => 'control-label' ]) }}<span class="require">*</span>
     {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.title')]) }}
 </div>

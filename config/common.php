@@ -11,6 +11,9 @@ return [
     'contact' => [
         'limit' => 5,
     ],
+    'product' => [
+        'limit' => 6,
+    ],
     'date' => [
         'blog' => 'd F Y',
     ],

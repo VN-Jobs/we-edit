@@ -39,6 +39,6 @@ trait DatatableTrait
 
     protected function hasAttr($params, $attr)
     {
-        return array_has($params, $attr) && !is_null($params[$attr]);
+        return array_has($params, $attr) && !empty($params[$attr]);
     }
 }

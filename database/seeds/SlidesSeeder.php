@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Eloquent\Slide;
+use App\Eloquent\Category;
 
 class SlidesSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class SlidesSeeder extends Seeder
     public function run()
     {
         Slide::truncate();
-        app(Slide::class)->insert([
+        $data = [
             [
                 'description' => 'WORLD CLASS SUPPORT',
                 'image_src' => 'seeds/slider_1.jpeg',
@@ -34,7 +35,13 @@ class SlidesSeeder extends Seeder
                 'image_src' => 'seeds/slider_4.jpeg',
                 'image_title' => 'slider_4.jpeg',
             ],
-        ]);
+        ];
+        app(Slide::class)->insert($data);
+
+        foreach (Category::all() as $category) {
+            data_set($data, '*.category_id', $category->id);
+            app(Slide::class)->insert($data);
+        }
         if (App::environment('local')) {
             factory(Slide::class, 10)->create();
         }

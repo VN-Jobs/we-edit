@@ -24,7 +24,23 @@ class Category extends Model
     public function products()
     {
         return $this->hasMany(Product::class)
+            ->select(['id', 'name', 'image_ba_src', 'description', 'category_id'])
             ->orderByDesc('updated_at')
             ->where('locked', false);
+    }
+
+    public function slides()
+    {
+        return $this->hasMany(Slide::class)
+            ->select(['id', 'image_src', 'description', 'category_id'])
+            ->orderByDesc('updated_at')
+            ->where('locked', false);
+    }
+
+    public function collections()
+    {
+        return $this->hasMany(Collection::class)
+            ->select(['id', 'image_src', 'sort', 'category_id'])
+            ->orderBy('sort');
     }
 }

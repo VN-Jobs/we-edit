@@ -29,6 +29,7 @@ mix.js('resources/assets/js/backend.js', 'public/assets/js')
     .sass('resources/assets/sass/backend/modules/product.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/config.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/login.scss', 'public/assets/css/backend');
+mix.js('resources/assets/vue/dropzone.js', 'public/assets/vue/');
 mix.copyDirectory('resources/assets/img', 'public/assets/img');
 mix.copyDirectory('resources/assets/seeds', 'public/statics/files/seeds');
 mix.copy('resources/assets/bower/summernote/dist/summernote.min.js', 'public/assets/js/backend/summernote.min.js');

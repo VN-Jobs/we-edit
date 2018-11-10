@@ -43,6 +43,8 @@ return [
         'recruitment' => 'Tuyển dụng',
         'link' => 'Đường dẫn',
         'add' => 'Thêm',
+        'document' => 'Tài liệu hướng dẫn',
+        'collection' => 'Bộ sưu tập',
     ],
 
     'text' => [
@@ -141,6 +143,8 @@ return [
         'price' => 'Giá',
         'intro' => 'Mô tả ngắn',
         'image_ba' => 'Before to After',
+        'collection_title' => 'Tiêu đề bộ sưu tập',
+        'collection_intro' => 'Giới thiệu bộ sưu tập',
     ],
 
     'button' => [

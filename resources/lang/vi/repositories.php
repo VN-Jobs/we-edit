@@ -43,6 +43,7 @@ return [
         'recruitment' => 'Tuyển dụng',
         'link' => 'Đường dẫn',
         'add' => 'Thêm',
+        'general' => 'Chung'
     ],
 
     'text' => [
@@ -141,6 +142,10 @@ return [
         'price' => 'Giá',
         'intro' => 'Mô tả ngắn',
         'image_ba' => 'Before to After',
+        'subject' => 'Subject',
+        'fb_embed' => 'Mã nhúng',
+        'flickr_api_key' => 'API key',
+        'flickr_photo_setid' => 'Photo setID',
     ],
 
     'button' => [

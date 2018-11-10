@@ -42,8 +42,9 @@
      </div>
     <script>
         var flickerConfigs = {
-            apiKey: 'ea4b187f74544e743e5a558bca48a807',
-            photoSetID: '72157701668245731'
+            baseUrl: (location.protocol !== 'https:') ? 'http://api.flickr.com/services/rest/' : 'https://api.flickr.com/services/rest/',
+            apiKey: '{{ $configs['flickr']['api_key'] ?? 'ea4b187f74544e743e5a558bca48a807' }}',
+            photoSetID: '{{ $configs['flickr']['photo_setid'] ?? '72157701668245731' }}'
         };
     </script>
     {{ Html::script(mix('/assets/js/frontend.js')) }}

@@ -130,7 +130,7 @@ window.$(window).on('load', function () {
     $(document).ready(function () {
         var apiKey = flickerConfigs.apiKey;
         var photoSetID = flickerConfigs.photoSetID;
-        var flickerAPI = 'http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&api_key=' + apiKey + '&photoset_id=' + photoSetID + '&format=json&jsoncallback=?';
+        var flickerAPI = flickerConfigs.baseUrl + '?&method=flickr.photosets.getPhotos&api_key=' + apiKey + '&photoset_id=' + photoSetID + '&format=json&jsoncallback=?';
 
         $.getJSON( flickerAPI, function( data ) {
             $.each( data.photoset.photo, function( i, item ) {

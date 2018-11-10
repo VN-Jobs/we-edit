@@ -130,7 +130,7 @@ textarea,
         position: relative;
         width: 100%;
         margin: 0.9em 0 0;
-        
+
         input,
         select,
         textarea,
@@ -172,3 +172,4 @@ a.submit { line-height: 3em; }
 a.inlineSubmit { line-height: 2.5em; }
 .fileToUpload { line-height: 2.5em; min-width: 9em; width: auto; }
 label.fileToUpload input[type="file"] { position: fixed; top: -1000px; }
+.invalid-feedback { display: block; }

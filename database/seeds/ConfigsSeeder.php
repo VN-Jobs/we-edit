@@ -132,5 +132,27 @@ class ConfigsSeeder extends Seeder
                 'about_us' => "WE-EDIT team located in Vietnam, serves you in a wide range of services including photo editing, floor plans, virtual staging and video listing as a best center for your promotional campaigns, expand your photography bussiness. Every job is processed with calibrated screens, top softwares, high connection internet, fast turnaround time, affordable price.\n\r \n\r Whether you are in real estate and need high-quality images to showcase a home or are presenting products to the retail market, WE-EDIT will work with your images to get the best result for your needs. High quality photos are proven to increase sales and our editors will make your product or listing stand out from the competition.",
             ],
         ]);
+
+        app(Config::class)->create([
+            'key' => 'mail',
+            'value' => [
+                'address' => "chanelcartoon01@gmail.com",
+                'subject' => '[We-edit.com.vn] Contact Message',
+            ],
+        ]);
+
+        app(Config::class)->create([
+            'key' => 'flickr',
+            'value' => [
+                'api_key' => "ea4b187f74544e743e5a558bca48a807",
+                'photo_setid' => '72157701668245731',
+            ],
+        ]);
+
+        app(Config::class)->create([
+            'key' => 'fb_embed',
+            'value' => ['<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=340231906161242" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>',
+            ],
+        ]);
     }
 }

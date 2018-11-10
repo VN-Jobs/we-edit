@@ -17,6 +17,7 @@
     <li><a data-toggle="tab" href="#blog">{{ __('repositories.page.blog') }}</a></li>
     <li><a data-toggle="tab" href="#about">{{ __('repositories.page.about') }}</a></li>
     <li><a data-toggle="tab" href="#contact">{{ __('repositories.page.contact') }}</a></li>
+    <li><a data-toggle="tab" href="#general">{{ __('repositories.title.general') }}</a></li>
 </ul>
 
 <div class="tab-content">
@@ -31,6 +32,9 @@
   </div>
   <div id="contact" class="tab-pane fade">
     @include('backend.config._contact')
+  </div>
+  <div id="general" class="tab-pane fade">
+    @include('backend.config._general')
   </div>
 </div>
 

@@ -60,4 +60,8 @@ class HomeController extends BackendController
             'url' => publicSrc($image->src),
         ];
     }
+
+    public function storeCollection(Request $request, $category)
+    {
+    }
 }

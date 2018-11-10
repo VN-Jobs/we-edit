@@ -80,4 +80,16 @@ class CategoryController extends BackendController
             }
         }, __FUNCTION__);
     }
+
+    public function collection($item)
+    {
+        $this->view = sprintf('%s.collection', $this->repositoryName);
+        $this->compacts['item'] = $item;
+        $this->compacts['heading'] = sprintf('%s - %s', __('repositories.title.collection'), $item->name);
+        $this->compacts['slides'] = $item->slides;
+        $this->compacts['products'] = $item->products;
+        $this->compacts['collections'] = $item->collections;
+
+        return $this->viewRender();
+    }
 }

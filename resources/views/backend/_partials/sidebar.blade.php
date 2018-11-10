@@ -35,6 +35,9 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="ion-document-text"></i> {{ __('repositories.title.document') }}</a>
+            </li>
         </ul>
     </nav>
 </div>

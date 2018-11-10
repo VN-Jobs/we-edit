@@ -1,14 +1,14 @@
 {{ Form::model($item, [
     'method' => 'PATCH',
-    'url' => route('backend.category.update', $item->id),
+    'url' => route('backend.category.update.collection', $item->id),
     'autocomplete'=>'off',
 ]) }}
 @include('backend._partials.components.errors')
 <div class="form-group">
     <div class="row">
         <div class="col-sm-6">
-            {{ Form::label('collection_title', __('repositories.label.collection_title'), ['class'=>'control-label']) }}
-            {{ Form::text('collection_title', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.collection_title')]) }}
+            {{ Form::label('collection_title', __('repositories.label.collection_title'), ['class'=>'control-label']) }}<span class="require">*</span>
+            {{ Form::text('collection_title', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.collection_title'), 'autofocus' => 'autofocus']) }}
         </div>
         <div class="col-sm-6">
             {{ Form::label('collection_intro', __('repositories.label.collection_intro'), ['class'=>'control-label']) }}
@@ -23,5 +23,9 @@
         :images="{{ $item->collections }}"
         :url="'{{ route('backend.home.store.collection', $item->id) }}'"
     ></upload-image>
+</div>
+
+<div class="form-group">
+    <button type="submit" class="btn btn-success btn-sm"><i class="ion-checkmark-circled"></i> {{ __('repositories.button.save') }}</button>
 </div>
 {{ Form::close() }}

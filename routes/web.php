@@ -40,6 +40,7 @@ Route::group(['namespace' => 'Backend'], function () {
         ]);
         Route::get('category/type/{type}', 'CategoryController@type')->name('category.type');
         Route::get('category/{category}/collection', 'CategoryController@collection')->name('category.collection');
+        Route::patch('category/{category}/collection', 'CategoryController@updateCollection')->name('category.update.collection');
         Route::resource('post', 'PostController');
         Route::resource('product', 'ProductController');
         Route::resource('slide', 'SlideController');

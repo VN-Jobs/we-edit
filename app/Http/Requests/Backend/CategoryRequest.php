@@ -15,11 +15,13 @@ class CategoryRequest extends Request
     {
         if ($this->category) {
             return [
+                'ceo_title' => 'required|min:2|max:100',
                 'name' => 'required|min:2|max:100',
                 'locked' => 'sometimes|boolean',
             ];
         } else {
             return [
+                'ceo_title' => 'required|min:2|max:100',
                 'name' => 'required|min:2|max:100',
                 'locked' => 'sometimes|boolean',
                 'type' => 'required|in:' . implode(',', config('common.category.type')),
@@ -30,6 +32,7 @@ class CategoryRequest extends Request
     public function attributes()
     {
         return [
+            'ceo_title' => __('repositories.label.ceo_title'),
             'name' => __('repositories.label.name'),
             'locked' => __('repositories.label.locked'),
             'image' => __('repositories.label.image'),

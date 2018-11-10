@@ -4,13 +4,18 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Contracts\Repositories\CategoryRepository;
+use App\Contracts\Repositories\ProductRepository;
 
 class CategoryController extends FrontendController
 {
+    protected $repoProduct;
+
     public function __construct(
-        CategoryRepository $category
+        CategoryRepository $category,
+        ProductRepository $product
     ) {
         parent::__construct($category);
+        $this->repoProduct = $product;
     }
 
     public function show($slug)
@@ -19,6 +24,13 @@ class CategoryController extends FrontendController
         $this->view = 'category.show';
         $this->compacts['heading'] = $category->name;
         $this->compacts['category'] = $category;
+        $this->compacts['slides'] = $category->slides;
+        $this->compacts['products'] = $category->products;
+        $this->compacts['services'] = $this->repoProduct->getHome(
+            config('common.product.limit'),
+            ['id', 'name', 'image_src', 'image_title', 'intro', 'price', 'category_id']
+        );
+        $this->compacts['collections'] = $category->collections;
 
         return $this->viewRender();
     }

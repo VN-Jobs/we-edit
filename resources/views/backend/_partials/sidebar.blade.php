@@ -4,7 +4,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.home.index') }}"><i class="ion-home"></i> {{ __('repositories.home.name') }}</a>
             </li>
-            <li class="nav-item nav-dropdown">
+            <li class="nav-item nav-dropdown open">
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="ion-ios-folder-outline"></i> {{ __('repositories.category.name') }}</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
@@ -18,7 +18,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.post.index') }}"><i class="ion-clipboard"></i> {{ __('repositories.title.post') }}</a>
             </li>
-            <li class="nav-item nav-dropdown">
+            <li class="nav-item nav-dropdown open">
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="ion-ios-gear-outline"></i> {{ __('repositories.title.config') }}</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
@@ -36,7 +36,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="ion-document-text"></i> {{ __('repositories.title.document') }}</a>
+                <a class="nav-link" target="_blank" href="{{ asset(config('common.documents.link')) }}"><i class="ion-document-text"></i> {{ __('repositories.title.document') }}</a>
             </li>
         </ul>
     </nav>

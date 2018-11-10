@@ -32,18 +32,15 @@
             </div>
         </div>
 
-        <!-- <div id="site-options">
-            <a href="#" id="fullscreen" class="option-item"></a>
-        </div> -->
-
         <a href="#site-body" id="back-top">
             <i class="fa fa-long-arrow-up"></i>
         </a>
      </div>
     <script>
         var flickerConfigs = {
-            apiKey: 'ea4b187f74544e743e5a558bca48a807',
-            photoSetID: '72157701668245731'
+            baseUrl: '{{ config("common.flicker.base_url") }}',
+            apiKey: '{{ config("common.flicker.api_key") }}',
+            photoSetID: '{{ config("common.flicker.photo_setid") }}',
         };
     </script>
     {{ Html::script(mix('/assets/js/frontend.js')) }}

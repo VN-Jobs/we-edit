@@ -12,13 +12,24 @@ class CategoryRepositoryEloquent extends AbstractRepositoryEloquent implements C
         parent::__construct($category);
     }
 
-    public function getDataByType($type, $columns = ['*'])
+    public function getDataByType($type, $columns = ['*'], $all = false)
     {
-        return $this->model->where('type', $type)->get($columns);
+        return $this->model
+        ->where('type', $type)
+        ->where(function ($q) use ($all) {
+            if (!$all) {
+                return $q->where('locked', false);
+            }
+        })
+        ->get($columns);
     }
 
     public function getRandom($limit, $columns = ['*'])
     {
-        return $this->model->inRandomOrder()->take($limit)->get($columns);
+        return $this->model
+            ->inRandomOrder()
+            ->where('locked', false)
+            ->take($limit)
+            ->get($columns);
     }
 }

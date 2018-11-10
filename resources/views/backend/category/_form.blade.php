@@ -1,6 +1,6 @@
 @include('backend._partials.components.errors')
 <div class="form-group">
-    {{ Form::label('ceo_title', __('repositories.label.ceo_title'), ['class'=>'control-label']) }}
+    {{ Form::label('ceo_title', __('repositories.label.ceo_title'), ['class'=>'control-label']) }}<span class="require">*</span>
     {{ Form::text('ceo_title', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.ceo_title')]) }}
 </div>
 <div class="form-group">

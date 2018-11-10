@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Contracts\Repositories\CategoryRepository;
 use App\Http\Requests\Backend\CategoryRequest;
+use App\Http\Requests\Backend\CollectionRequest;
 use App\Jobs\Category\StoreJob;
 use App\Jobs\Category\UpdateJob;
+use App\Jobs\Category\CollectionJob;
 
 class CategoryController extends BackendController
 {
@@ -33,7 +35,7 @@ class CategoryController extends BackendController
             __("repositories.title.{$type}")
         );
         $this->compacts['action'] = __("repositories.title.{$action}");
-        $this->compacts['items'] = $this->repository->getDataByType($type, $this->selectData);
+        $this->compacts['items'] = $this->repository->getDataByType($type, $this->selectData, true);
 
         return $this->viewRender();
     }
@@ -91,5 +93,14 @@ class CategoryController extends BackendController
         $this->compacts['collections'] = $item->collections;
 
         return $this->viewRender();
+    }
+
+    public function updateCollection(CollectionRequest $request, $item)
+    {
+        $data = $request->all();
+
+        return $this->doRequest(function () use ($data, $item) {
+            return $this->dispatchNow(new CollectionJob($data, $item));
+        }, 'update', false, route('backend.category.type', 'product'));
     }
 }

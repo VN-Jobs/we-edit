@@ -36,6 +36,10 @@ class RepositoryServiceProvider extends ServiceProvider
             \App\Contracts\Repositories\ProductRepository::class,
             \App\Repositories\ProductRepositoryEloquent::class,
         ],
+        'collection' => [
+            \App\Contracts\Repositories\CollectionRepository::class,
+            \App\Repositories\CollectionRepositoryEloquent::class,
+        ],
         'config' => [
             \App\Contracts\Repositories\ConfigRepository::class,
             \App\Repositories\ConfigRepositoryEloquent::class,

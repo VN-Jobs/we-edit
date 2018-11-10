@@ -149,6 +149,7 @@ return [
 
     'button' => [
         'login' => 'Đăng nhập',
+        'save' => 'Lưu',
         'forgot_password' => 'Quên mật khẩu',
         'serialize' => 'Sắp xếp',
     ],
@@ -167,6 +168,10 @@ return [
             'unsuccessfully' => 'Xoá thất bại.',
         ],
         'serialize' => [
+            'successfully' => 'Sắp xếp thành công.',
+            'unsuccessfully' => 'Sắp xếp thất bại.',
+        ],
+        'updateCollection' => [
             'successfully' => 'Sắp xếp thành công.',
             'unsuccessfully' => 'Sắp xếp thất bại.',
         ],

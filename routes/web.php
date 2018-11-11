@@ -19,6 +19,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     Route::get('/contact', function () {
         return view('frontend.page.contact');
     })->name('contact');
+    Route::post('home/contact', 'HomeController@storeContact')->name('home.store.contact');
 
     Route::get('/blog', 'PostController@index')->name('blog');
     Route::get('/blog/{slug}', 'PostController@show')->name('blog.show');

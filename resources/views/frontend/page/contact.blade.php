@@ -50,7 +50,7 @@
             </div>
         </section>
 
-        <section class="section-wrapper contact-map-wrapper">
+        <section class="section-wrapper contact-map-wrapper" id="we-wrapper">
             <div class="container">
                 <div class="row">
                     <div class="contact-form-block col-lg-6">
@@ -58,27 +58,46 @@
                     </div>
                     <div class="contact-form-block col-lg-6">
                         <h2>How Can We Help?</h2>
-
-                        <form class="form contact-form" autocomplete="off">
+                        @if (Session::has('contact_flash_message'))
+                            <div class="alert alert-success">{{ Session::get('contact_flash_message') }}</div>
+                        @endif
+                        {{ Form::open([
+                            'url' => route('home.store.contact') . '#we-wrapper',
+                            'role'  => 'form',
+                            'autocomplete'=>'off',
+                            'class' => 'form contact-form',
+                        ]) }}
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="first-name" name="first-name" placeholder="First name" />
+                                    {{ Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.first_name') . ' (*)']) }}
+                                    @if ($errors->has('first_name'))
+                                        <small class="form-text invalid-feedback">{{ $errors->first('first_name') }}</small>
+                                    @endif
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Last name" />
+                                    {{ Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.last_name') . ' (*)']) }}
+                                    @if ($errors->has('last_name'))
+                                        <small class="form-text invalid-feedback">{{ $errors->first('last_name') }}</small>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email address" />
+                                    {{ Form::text('company', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.company') . ' (*)']) }}
+                                    @if ($errors->has('company'))
+                                        <small class="form-text invalid-feedback">{{ $errors->first('company') }}</small>
+                                    @endif
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="company" name="company" placeholder="Your company" />
+                                    {{ Form::text('email', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.email') . ' (*)']) }}
+                                    @if ($errors->has('email'))
+                                        <small class="form-text invalid-feedback">{{ $errors->first('email') }}</small>
+                                    @endif
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message and may be link to trial images included"></textarea>
+                                {{ Form::textarea('message', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => 'Message...']) }}
                             </div>
 
                             <button type="submit" class="btn btn-theme">Send Us</button>

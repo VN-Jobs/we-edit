@@ -84,7 +84,7 @@ return [
         'category_ids' => 'Nhóm sản phẩm',
         'first_name' => 'First Name',
         'last_name' => 'Last Name',
-        'company' => 'Công ty',
+        'company' => 'Company',
         'message' => 'Thông điệp',
         'name' => 'Tên',
         'email' => 'Email',
@@ -286,5 +286,16 @@ return [
         'post' => 'Blog',
         'contact' => 'Contact',
         'about' => 'About Us',
+        'text' => [
+            'required' => 'The :attribute field is required.',
+            'min' => 'The :attribute must be at least :min characters.',
+            'max' => 'The :attribute may not be greater than :max characters.',
+            'email' => 'The :attribute must be a valid email address.',
+            'unique' => 'The :attribute has already been taken.',
+        ],
+        'contact_form' => [
+            'successfully' => 'Your contact sended successfully',
+            'unsuccessfully' => 'Your contact sended unsuccessfully',
+        ],
     ],
 ];

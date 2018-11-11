@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Contracts\Repositories\SlideRepository;
 use App\Contracts\Repositories\ContactRepository;
 use App\Contracts\Repositories\ProductRepository;
+use App\Http\Requests\Frontend\ContactRequest;
+use App\Jobs\Contact\UserStoreJob;
 
 class HomeController extends FrontendController
 {
@@ -42,5 +44,19 @@ class HomeController extends FrontendController
         );
 
         return $this->viewRender();
+    }
+
+    public function storeContact(ContactRequest $request)
+    {
+        $data = $request->all();
+
+        try {
+            $message = __("repositories.frontend.contact_form.successfully");
+            $this->dispatchNow(new UserStoreJob($data));
+        } catch (\Exception $e) {
+            $message = __("repositories.frontend.contact_form.unsuccessfully");
+        }
+
+        return redirect(url()->previous())->with('contact_flash_message', $message);
     }
 }

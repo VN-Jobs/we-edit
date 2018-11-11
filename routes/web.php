@@ -35,6 +35,7 @@ Route::group(['namespace' => 'Backend'], function () {
         Route::delete('home/{contact}', 'HomeController@destroy')->name('home.destroy');
         Route::post('summernote/image', 'HomeController@summernoteImage')->name('summernote.image');
         Route::post('/collection/{category}', 'HomeController@storeCollection')->name('home.store.collection');
+        Route::delete('/collection/{id}', 'HomeController@deleteCollection')->name('home.delete.collection');
         Route::resource('user', 'UserController');
         Route::resource('category', 'CategoryController', [
             'except' => ['index', 'create', 'show']

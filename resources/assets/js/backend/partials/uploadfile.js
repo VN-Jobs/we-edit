@@ -47,7 +47,7 @@ class Upload {
         element.summernote("insertImage", data.url);
       },
       error: function(xhr, textStatus, error) {
-        console.log(xhr.responseJSON.message);
+        alert(xhr.responseJSON.errors.image.toString() || xhr.responseJSON.message);
       }
     });
     if (callback) {

@@ -11,4 +11,9 @@ class CollectionRepositoryEloquent extends AbstractRepositoryEloquent implements
     {
         parent::__construct($collection);
     }
+
+    public function getMaxSort($categoryId)
+    {
+        return $this->model->where('category_id', $categoryId)->max('sort');
+    }
 }

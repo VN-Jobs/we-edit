@@ -48,7 +48,7 @@
           'dz',
           new Dropzone("#dropzone", {
             url: self.url,
-            paramName: 'src',
+            paramName: 'image',
             acceptedFiles: 'image/*',
             addRemoveLinks: true,
             dictRemoveFile: window.lang.get('repositories.title.reset'),
@@ -69,7 +69,7 @@
       },
       dzOnError: function(file, response, xhr) {
         if (xhr && xhr.status == 422) {
-          console.log(response.src.toString())
+          return file.previewElement.querySelector("[data-dz-errormessage]").innerHTML = response.errors.image.toString();
         }
         file.previewElement.classList.add("dz-error");
         var _ref = file.previewElement.querySelector("[data-dz-errormessage]");
@@ -87,6 +87,9 @@
         }
       },
       dzOnFileRemoved: function (file) {
+        if (_.has(file.data, 'id')) {
+          axios.delete(route.route('backend.home.delete.collection', {'id': file.data.id}));
+        }
         return;
       },
       dzOnSuccess: function (file, data) {
@@ -111,7 +114,7 @@
         var promises = [];
         images.forEach(function(image) {
           var promise = new Promise(function(resolve, reject) {
-            var file = { name: image.name, size: image.size, src: image.pub_image };
+            var file = { name: image.image_src, size: image.size, src: image.pub_image };
             file.data = image;
             resolve(self.dzMockImage(file, image));
           });

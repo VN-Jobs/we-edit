@@ -8,10 +8,15 @@ use App\Jobs\SummerNote\UploadJob;
 use App\Contracts\Repositories\ContactRepository;
 use App\Jobs\Contact\IndexJob;
 use App\Jobs\Contact\UpdateJob;
+use App\Jobs\Category\UploadCollectionJob;
+use App\Jobs\Category\DeleteCollectionJob;
 use App\Http\Requests\Backend\ContactRequest;
 
 class HomeController extends BackendController
 {
+    protected $imageRules = [
+        'image' => 'nullable|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
+    ];
     public function __construct(ContactRepository $contact)
     {
         parent::__construct($contact);
@@ -55,6 +60,12 @@ class HomeController extends BackendController
 
     public function summernoteImage(Request $request)
     {
+        $request->validate(
+            $this->imageRules,
+            [],
+            ['image' => __('repositories.label.image')]
+        );
+
         $image =  $this->dispatchNow(new UploadJob($request->image));
         return [
             'url' => publicSrc($image->src),
@@ -63,5 +74,21 @@ class HomeController extends BackendController
 
     public function storeCollection(Request $request, $category)
     {
+        $request->validate(
+            $this->imageRules,
+            [],
+            ['image' => __('repositories.label.image')]
+        );
+
+        $image = $request->image;
+
+        return $this->dispatchNow(new UploadCollectionJob($image, $category));
+    }
+
+    public function deleteCollection($id)
+    {
+        return $this->doRequest(function () use ($id) {
+            return $this->dispatchNow(new DeleteCollectionJob($id));
+        }, 'destroy');
     }
 }

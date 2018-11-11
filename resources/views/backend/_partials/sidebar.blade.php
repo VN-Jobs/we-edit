@@ -15,8 +15,16 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('backend.post.index') }}"><i class="ion-clipboard"></i> {{ __('repositories.title.post') }}</a>
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="ion-clipboard"></i> {{ __('repositories.title.post') }}</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('backend.post.index') }}"> {{ __('repositories.title.list') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('backend.post.create') }}"> {{ __('repositories.title.create') }}</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item nav-dropdown open">
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="ion-ios-gear-outline"></i> {{ __('repositories.title.config') }}</a>

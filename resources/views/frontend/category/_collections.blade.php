@@ -18,7 +18,7 @@
                         </div>
                         <ul id="lightgallery" class="list-unstyled row">
                             @foreach ($collections as $collection)
-                            <li class="lightimage-0 col-xs-12" data-responsive="{{ $collection->pub_image }} 375, {{ $collection->pub_image }} 480, {{ $collection->pub_image }} 800" data-src="{{ $collection->pub_image }}">
+                            <li class="lightimage-{{ $loop->index }} col-xs-12" data-responsive="{{ $collection->pub_image }} 375, {{ $collection->pub_image }} 480, {{ $collection->pub_image }} 800" data-src="{{ $collection->pub_image }}">
                                 <a href="javascript:void(0);">
                                     <img class="img-responsive" src="{{ $collection->pub_image }}" alt="{{ $collection->image_src }}">
                                     @if ($loop->first)

@@ -25,4 +25,7 @@ return [
     'documents' => [
         'link' => 'we-edit-documents.pdf',
     ],
+    'email' => [
+        'we-edit' => 'info@we-edit.com.vn',
+    ],
 ];

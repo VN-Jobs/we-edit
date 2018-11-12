@@ -43,6 +43,13 @@ services:
     restart: always
     ports:
       - 8000:8080
+  redis:
+      restart: always
+      image: redis:latest
+      expose:
+        - "6379"
+      volumes:
+        - ./.docker/redis:/data
   caddy:
     image: abiosoft/caddy
     restart: always

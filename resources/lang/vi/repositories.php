@@ -282,6 +282,10 @@ return [
         ]
     ],
 
+    'email' => [
+        'subject' => '[We-edit] - Thông báo có một liên hệ mới.!',
+    ],
+
     'frontend' => [
         'post' => 'Blog',
         'contact' => 'Contact',

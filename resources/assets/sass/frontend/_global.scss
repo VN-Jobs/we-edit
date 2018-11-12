@@ -37,6 +37,9 @@ img {
     height: auto;
     display: block;
 }
+p {
+    white-space: pre-line;
+}
 
 a:focus,
 button:focus {
@@ -151,4 +154,8 @@ ol {
     .site-main {
         padding-top: 0;
     }
+}
+
+.white-space-pre-line {
+    white-space: pre-line;
 }

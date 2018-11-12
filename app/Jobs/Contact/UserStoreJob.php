@@ -4,6 +4,8 @@ namespace App\Jobs\Contact;
 
 use App\Jobs\Job;
 use App\Contracts\Repositories\ContactRepository;
+use App\Mail\CreateContact;
+use Illuminate\Support\Facades\Mail;
 
 class UserStoreJob extends Job
 {
@@ -34,7 +36,17 @@ class UserStoreJob extends Job
     public function handle(ContactRepository $repository)
     {
         $data = array_only($this->params, $this->fillable);
+        $item = $repository->create($data);
 
-        return $repository->create($data);
+        Mail::queue(new CreateContact([
+            'id' => $item->id,
+            'firstName' => $data['first_name'],
+            'lastName' => $data['last_name'],
+            'company' => $data['company'],
+            'email' => $data['email'],
+            'content' => $data['message'],
+        ]));
+
+        return $item;
     }
 }

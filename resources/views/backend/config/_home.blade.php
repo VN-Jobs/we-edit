@@ -24,19 +24,19 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
-                    {{ Form::label('home', 'TWILIGHT', ['class'=>'control-label']) }}
+                    {{ Form::label('home', 'Top Quality', ['class'=>'control-label']) }}
                     {{ Form::textarea('home[icons][twilight]', $items->keyBy('key')['home']['value']['icons']['twilight'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
                 <div class="col-md-6">
-                    {{ Form::label('home', 'REMOVE ITEM', ['class'=>'control-label']) }}
+                    {{ Form::label('home', 'Excellent Communication', ['class'=>'control-label']) }}
                     {{ Form::textarea('home[icons][remove_item]', $items->keyBy('key')['home']['value']['icons']['remove_item'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
                 <div class="col-md-6">
-                    {{ Form::label('home', 'DAY TO DUSK', ['class'=>'control-label']) }}
+                    {{ Form::label('home', 'Fast Turnaround Time', ['class'=>'control-label']) }}
                     {{ Form::textarea('home[icons][day_to_dusk]', $items->keyBy('key')['home']['value']['icons']['day_to_dusk'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
                 <div class="col-md-6">
-                    {{ Form::label('home', 'IMAGE ENHANCEMENT', ['class'=>'control-label']) }}
+                    {{ Form::label('home', 'Professional Manpower', ['class'=>'control-label']) }}
                     {{ Form::textarea('home[icons][image_enhancement]', $items->keyBy('key')['home']['value']['icons']['image_enhancement'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
             </div>

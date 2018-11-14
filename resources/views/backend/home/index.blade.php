@@ -30,6 +30,7 @@
                     @slot('filter_fields')
                     @endslot
                     @endcomponent
+                    <a href="{{ route('backend.home.create') }}" class="btn btn-success btn-sm create-form"><i class="ion-plus-round"></i> {{ __('repositories.title.create') }}</a>
                     <div class="table-responsive">
                         <table id="table-index" class="table table-bordered table-hover">
                             <thead>

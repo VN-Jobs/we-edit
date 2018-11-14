@@ -27,7 +27,7 @@
                     @include('backend.category._slides')
                     <br>
                     <h2 class="form-control-static text-center">{{ $item->ceo_title }}</h2>
-                    <p class="text-center">{{ $item->description }}</p>
+                    <div class="text-center">{!! $item->description !!}</div>
                     <br>
                     @include('backend.category._products')
                     <hr>

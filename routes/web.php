@@ -33,6 +33,8 @@ Route::group(['namespace' => 'Backend'], function () {
         Route::get('/home/{contact}/edit', 'HomeController@edit')->name('home.edit');
         Route::patch('/home/{contact}', 'HomeController@update')->name('home.update');
         Route::delete('home/{contact}', 'HomeController@destroy')->name('home.destroy');
+        Route::get('contact/create', 'HomeController@create')->name('home.create');
+        Route::post('contact', 'HomeController@store')->name('home.store');
         Route::post('summernote/image', 'HomeController@summernoteImage')->name('summernote.image');
         Route::post('/collection/{category}', 'HomeController@storeCollection')->name('home.store.collection');
         Route::delete('/collection/{id}', 'HomeController@deleteCollection')->name('home.delete.collection');

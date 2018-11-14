@@ -3,22 +3,22 @@
         <div class="row">
             <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 feature-item py-4 text-center">
                 <img src="assets/img/icon/edit.png" style="width: 20%;display: initial;">
-                <h2>TWILIGHT</h2>
+                <h2>Top Quality</h2>
                 <p>{{ $configs['home']['icons']['twilight'] ?? null }}</p>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 feature-item py-4 text-center">
                 <img src="assets/img/icon/reason.png" style="width: 20%;display: initial;">
-                <h2>REMOVE ITEM</h2>
+                <h2>Excellent Communication</h2>
                 <p>{{ $configs['home']['icons']['remove_item'] ?? null }}</p>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 feature-item py-4 text-center">
                 <img src="assets/img/icon/best-quality.png" style="width: 20%;display: initial;">
-                <h2>DAY TO DUSK</h2>
+                <h2>Fast Turnaround Time</h2>
                 <p>{{ $configs['home']['icons']['day_to_dusk'] ?? null }}</p>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 feature-item py-4 text-center">
                 <img src="assets/img/icon/24h.png" style="width: 20%;display: initial;">
-                <h2>IMAGE ENHANCEMENT</h2>
+                <h2>Professional Manpower</h2>
                 <p>{{ $configs['home']['icons']['image_enhancement'] ?? null }}</p>
             </div>
             <div class="clear"></div>

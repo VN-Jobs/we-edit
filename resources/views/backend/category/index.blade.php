@@ -3,6 +3,7 @@
 @section('title', isset($heading) ? $heading : __('repositories.index'))
 
 @push('prescripts')
+{{ Html::script(mix('/assets/js/backend/summernote.min.js')) }}
 {{ Html::script(mix('/assets/js/backend/modules/category.js')) }}
     <script>
         $(function () {

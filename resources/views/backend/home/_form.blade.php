@@ -28,6 +28,14 @@
         </div>
         <div class="form-group">
             <div class="row">
+                <div class="col-sm-8">
+                    {{ Form::label('email', __('repositories.label.email'), ['class'=>'control-label']) }}<span class="require">*</span>
+                    {{ Form::email('email', null, ['placeholder' => 'example@email.com', 'class' => 'form-control']) }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
                 <div class="col-md-8">
                     {{ Form::label('company', __('repositories.label.company'), ['class'=>'control-label']) }}<span class="require">*</span>
                     {{ Form::text('company', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.company')]) }}
@@ -60,7 +68,7 @@
 
 <div class="form-group">
     <div class="text-right col-sm-4 col-sm-offset-4">
-        <button type="submit" class="btn btn-success btn-sm"><i class="ion-checkmark-circled"></i> {{ __('repositories.title.edit') }}</button>
+        <button type="submit" class="btn btn-success btn-sm"><i class="ion-checkmark-circled"></i> {{ isset($item) ? __('repositories.title.edit') : __('repositories.title.create') }}</button>
         <a href="javascript:window.history.back()" class="btn btn-primary btn-sm" ><i class="ion-arrow-left-a"></i> {{ __('repositories.title.back') }}</a>
     </div>
 </div>

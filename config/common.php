@@ -23,7 +23,7 @@ return [
         'photo_setid' => '72157701668245731',
     ],
     'documents' => [
-        'link' => 'we-edit-documents.pdf',
+        'link' => 'we-edit_documents.pdf',
     ],
     'email' => [
         'we-edit' => 'info@we-edit.com.vn',

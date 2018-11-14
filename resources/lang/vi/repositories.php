@@ -198,6 +198,7 @@ return [
         'name' => 'Liên hệ',
         'resource' => [
             'index' => 'Thông tin liên hệ',
+            'create' => 'Tạo mới liên hệ',
             'edit' => 'Cập nhật liên hệ',
         ],
     ],

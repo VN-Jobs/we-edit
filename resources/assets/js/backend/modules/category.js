@@ -3,13 +3,42 @@
 
 import '../../../bower/jqTree/build/tree.jquery';
 import Notification from './../partials/notification';
+import Uploadfile from './../partials/uploadfile';
 class Category {
   index (items, item) {
     var notification = new Notification();
     this.jqTree(items, item);
+    this.summernote();
 
     notification.destroyRow(null, 'li');
     notification.flashMessage();
+  }
+
+  summernote() {
+    var _$ = window.$;
+    var uploadfile = new Uploadfile();
+    uploadfile.init();
+    _$('.textarea-summernote').summernote({
+      toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'italic', 'underline', 'clear']],
+        ['fontname', ['fontname']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture','video', 'hr']],
+        ['view', ['fullscreen', 'codeview']],
+        ['help', ['help']]
+      ],
+      height:250,
+      callbacks: {
+        onImageUpload: function(files) {
+          uploadfile.sendImage(files[0], laroute.route('backend.summernote.image'), _$(this));
+        }
+      }
+    });
   }
 
   jqTree (items, item, selector = '#list') {

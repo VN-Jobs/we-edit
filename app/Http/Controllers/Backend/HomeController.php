@@ -8,6 +8,7 @@ use App\Jobs\SummerNote\UploadJob;
 use App\Contracts\Repositories\ContactRepository;
 use App\Jobs\Contact\IndexJob;
 use App\Jobs\Contact\UpdateJob;
+use App\Jobs\Contact\StoreJob;
 use App\Jobs\Category\UploadCollectionJob;
 use App\Jobs\Category\DeleteCollectionJob;
 use App\Http\Requests\Backend\ContactRequest;
@@ -33,6 +34,22 @@ class HomeController extends BackendController
         }
 
         return $this->viewRender();
+    }
+
+    public function create()
+    {
+        parent::__create();
+
+        return $this->viewRender();
+    }
+
+    public function store(ContactRequest $request)
+    {
+        $data = $request->all();
+
+        return $this->doRequest(function () use ($data) {
+            return $this->dispatchNow(new StoreJob($data));
+        }, __FUNCTION__);
     }
 
     public function edit($item)

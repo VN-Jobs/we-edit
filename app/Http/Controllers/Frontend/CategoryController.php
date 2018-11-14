@@ -22,7 +22,11 @@ class CategoryController extends FrontendController
     {
         $category = $this->repository->findBySlugOrFail($slug);
         $this->view = 'category.show';
-        $this->compacts['heading'] = $category->name;
+        // SEO
+        $this->compacts['heading'] = $category->ceo_title ?? $category->name;
+        $this->compacts['description'] = $category->ceo_description;
+        $this->compacts['keywords'] = $category->ceo_keywords;
+
         $this->compacts['category'] = $category;
         $this->compacts['slides'] = $category->slides;
         $this->compacts['products'] = $category->products;

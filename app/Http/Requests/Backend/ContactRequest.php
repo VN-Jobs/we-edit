@@ -22,6 +22,7 @@ class ContactRequest extends Request
         return [
             'first_name' => 'required|min:2|max:175',
             'last_name' => 'required|min:2|max:175',
+            'email' => 'required|email|max:255',
             'company' => 'required|min:2|max:175',
             'image'=> 'nullable|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
         ];
@@ -32,6 +33,7 @@ class ContactRequest extends Request
         return [
             'first_name' => __('repositories.label.first_name'),
             'last_name' => __('repositories.label.last_name'),
+            'email' => __('repositories.label.email'),
             'company' => __('repositories.label.company'),
             'avatar' => __('repositories.label.avatar'),
         ];

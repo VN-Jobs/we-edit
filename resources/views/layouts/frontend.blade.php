@@ -7,9 +7,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
 
+    <link rel="shortcut icon" href="favicon.png"  type="image/png" sizes="30x30" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <meta name="description" content="{{ isset($description) ? $description : ($configs['description'][0] ?? null) }}">
+    <meta name="keywords" content="{{ isset($keywords) ? $keywords : ($configs['keywords'][0] ?? null) }}">
+    <meta property="og:url" content="{{ Request::url() }}" />
+    <meta property="og:site_name" content="{{ isset($heading) ? $heading : ($configs['name'][0] ?? null) }}" />
+    <meta property="og:type"   content="website" />
+    <meta property="og:title"  content="{{ isset($heading) ? $heading : ($configs['name'][0] ?? null) }}" />
+    <meta property="og:description"  content="{{ isset($description) ? $description : ($configs['description'][0] ?? null) }}" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="favicon.png"  type="image/png" sizes="30x30" />
 
     <title>@yield('title')</title>
 
@@ -25,12 +38,6 @@
         @yield('page-content')
 
         @include('frontend._partials.footer')
-
-        <div class="preeloader" style="display: none;">
-            <div class="preloader-spinner">
-                <img src="assets/img/preloader.gif" alt="">
-            </div>
-        </div>
 
         <a href="#site-body" id="back-top">
             <i class="fa fa-long-arrow-up"></i>

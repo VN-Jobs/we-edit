@@ -13,7 +13,7 @@
             </div>
             <div class="col-sm-6">
                 {{ Form::label('collection_intro', __('repositories.label.collection_intro'), ['class'=>'control-label']) }}
-        {{ Form::textarea('collection_intro', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => __('repositories.label.collection_intro')]) }}
+                {{ Form::textarea('collection_intro', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => __('repositories.label.collection_intro')]) }}
             </div>
         </div>
     </div>

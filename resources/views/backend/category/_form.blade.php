@@ -18,7 +18,7 @@
 
 <div class="form-group">
     {{ Form::label('description', __('repositories.label.description'), ['class' => 'control-label']) }}
-    {{ Form::textarea('description', null, ['class' => 'form-control']) }}
+    {{ Form::textarea('description', null, ['class' => 'form-control textarea-summernote']) }}
 </div>
 
 <div class="form-group">

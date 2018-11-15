@@ -3,6 +3,14 @@
 
 import swal from 'sweetalert2';
 class Notification {
+  constructor () {
+    this._text = '';
+  }
+
+  setText (text) {
+    this._text = text;
+  }
+
   destroyRow (datatable = null, remove = null, selector) {
     var _$ = window.$;
     var self = this;
@@ -13,6 +21,7 @@ class Notification {
       var deleteUrl = _$(this).attr('href');
       swal({
         title: window.lang.get('repositories.sweetalert.question'),
+        text: self._text,
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#DD6B55',

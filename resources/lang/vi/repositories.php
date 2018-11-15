@@ -179,6 +179,7 @@ return [
 
     'sweetalert' => [
         'question' => 'Bạn chắc chắn?',
+        'question_category' => 'Nếu xoá danh mục, Slide, Sản phẩm, Bộ sưu tập Có liên quan cũng sẽ bị xoá theo.',
         'ok' => 'Đồng ý',
         'cancel' => 'Huỷ',
     ],

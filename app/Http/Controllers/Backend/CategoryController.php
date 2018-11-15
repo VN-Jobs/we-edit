@@ -7,6 +7,7 @@ use App\Http\Requests\Backend\CategoryRequest;
 use App\Http\Requests\Backend\CollectionRequest;
 use App\Jobs\Category\StoreJob;
 use App\Jobs\Category\UpdateJob;
+use App\Jobs\Category\DestroyJob;
 use App\Jobs\Category\CollectionJob;
 
 class CategoryController extends BackendController
@@ -76,7 +77,7 @@ class CategoryController extends BackendController
     public function destroy($item)
     {
         return $this->doRequest(function () use ($item) {
-            $status = $this->repository->delete($item);
+            $status = $this->dispatchNow(new DestroyJob($item));
             if (!$status) {
                 throw new \Exception();
             }

@@ -134,12 +134,12 @@ window.$(window).on('load', function () {
     $(document).ready(function () {
         var apiKey = flickerConfigs.apiKey;
         var photoSetID = flickerConfigs.photoSetID;
-        var flickerAPI = 'http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&api_key=' + apiKey + '&photoset_id=' + photoSetID + '&format=json&jsoncallback=?';
+        var flickerAPI = flickerConfigs.baseUrl + '?&method=flickr.photosets.getPhotos&api_key=' + apiKey + '&photoset_id=' + photoSetID + '&format=json&jsoncallback=?';
 
         $.getJSON( flickerAPI, function( data ) {
             $.each( data.photoset.photo, function( i, item ) {
-                var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
-                var photoHref='http://www.flickr.com/photos/' + data.photoset.owner + '/' + item.id;
+                var photoURL = 'https://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
+                var photoHref='https://www.flickr.com/photos/' + data.photoset.owner + '/' + item.id;
                 var photoItem = '<a href="' + photoHref + '" class="single-gallery-items"><img src="' + photoURL + '" alt=""></a>';
 
                 $(photoItem).appendTo( "#lightgallery-flickr" );

@@ -7,6 +7,7 @@ import Uploadfile from './../partials/uploadfile';
 class Category {
   index (items, item) {
     var notification = new Notification();
+    notification.setText(window.lang.get('repositories.sweetalert.question_category'));
     this.jqTree(items, item);
     this.summernote();
 

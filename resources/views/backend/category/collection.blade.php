@@ -4,9 +4,11 @@
 
 @push('prescripts')
 {{ Html::script(mix('assets/vue/dropzone.js')) }}
+{{ Html::script(mix('/assets/js/backend/modules/category.js')) }}
     <script>
         $(function () {
             window.flash_message = {!! session("flash_message") ?? '{}' !!};
+            window.category.sortImages();
         });
     </script>
 @endpush

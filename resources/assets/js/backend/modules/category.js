@@ -4,6 +4,8 @@
 import '../../../bower/jqTree/build/tree.jquery';
 import Notification from './../partials/notification';
 import Uploadfile from './../partials/uploadfile';
+import Sortable from 'sortablejs';
+
 class Category {
   index (items, item) {
     var notification = new Notification();
@@ -13,6 +15,13 @@ class Category {
 
     notification.destroyRow(null, 'li');
     notification.flashMessage();
+  }
+
+  sortImages () {
+    var _$ = window.$;
+    Sortable.create(dropzone, {
+      handle: ".dz-preview"
+    });
   }
 
   summernote() {

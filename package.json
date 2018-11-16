@@ -31,6 +31,7 @@
         "jquery-ui": "^1.12.1",
         "lang.js": "^1.1.13",
         "lightgallery": "^1.6.11",
-        "magnific-popup": "^1.1.0"
+        "magnific-popup": "^1.1.0",
+        "sortablejs": "^1.7.0"
     }
 }

@@ -37,10 +37,6 @@ class StoreJob extends Job
         $data['image_src'] = $image->src;
         $data['image_title'] = $image->title;
 
-        $imageBa = $this->uploadFile($this->params['image_ba']);
-        $data['image_ba_src'] = $imageBa->src;
-        $data['image_ba_title'] = $imageBa->title;
-
         $repository->create($data);
     }
 }

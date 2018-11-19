@@ -19,7 +19,7 @@ class ProductRequest extends Request
                 'price' => 'required|min:2|max:175',
                 'category_id' => 'required|integer|not_in:0',
                 'image'=> 'nullable|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
-                'image_ba'=> 'nullable|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
+                'sort'=> 'nullable|integer',
             ];
         } else {
             return [
@@ -27,7 +27,7 @@ class ProductRequest extends Request
                 'price' => 'required|min:2|max:175',
                 'category_id' => 'required|integer|not_in:0',
                 'image'=> 'required|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
-                'image_ba'=> 'required|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
+                'sort'=> 'nullable|integer',
             ];
         }
     }
@@ -39,7 +39,7 @@ class ProductRequest extends Request
             'price' => __('repositories.label.price'),
             'category_id' => __('repositories.label.category_id'),
             'image' => __('repositories.label.image'),
-            'image_ba' => __('repositories.label.image_ba'),
+            'sort' => __('repositories.label.sort'),
         ];
     }
 }

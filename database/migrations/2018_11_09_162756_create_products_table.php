@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('image_ba_title')->nullable();
             $table->text('description')->nullable();
             $table->text('intro')->nullable();
+            $table->integer('sort')->default(0);
             $table->string('price')->nullable();
             $table->boolean('is_home')->default(false);
             $table->boolean('locked')->default(false);

@@ -29,9 +29,9 @@ class CategoryController extends FrontendController
 
         $this->compacts['category'] = $category;
         $this->compacts['slides'] = $category->slides;
-        $this->compacts['products'] = $category->products;
-        $this->compacts['services'] = $this->repoProduct->getHome(
+        $this->compacts['services'] = $this->repoProduct->getDataByCategory(
             config('common.product.limit'),
+            $category->id,
             ['id', 'name', 'image_src', 'image_title', 'intro', 'price', 'category_id']
         );
         $this->compacts['collections'] = $category->collections;

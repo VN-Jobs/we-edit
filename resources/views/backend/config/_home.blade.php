@@ -32,11 +32,11 @@
                     {{ Form::textarea('home[icons][remove_item]', $items->keyBy('key')['home']['value']['icons']['remove_item'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
                 <div class="col-md-6">
-                    {{ Form::label('home', 'Fast Turnaround Time', ['class'=>'control-label']) }}
+                    {{ Form::label('home', 'Professional Manpower', ['class'=>'control-label']) }}
                     {{ Form::textarea('home[icons][day_to_dusk]', $items->keyBy('key')['home']['value']['icons']['day_to_dusk'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
                 <div class="col-md-6">
-                    {{ Form::label('home', 'Professional Manpower', ['class'=>'control-label']) }}
+                    {{ Form::label('home', 'Fast Turnaround Time', ['class'=>'control-label']) }}
                     {{ Form::textarea('home[icons][image_enhancement]', $items->keyBy('key')['home']['value']['icons']['image_enhancement'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                 </div>
             </div>
@@ -60,10 +60,6 @@
         <div class="form-group">
             {{ Form::label('address', __('repositories.label.address'), ['class'=>'control-label']) }}
             {{ Form::textarea('address[]', $items->keyBy('key')['address']['value'][0] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
-        </div>
-        <div class="form-group">
-            {{ Form::label('analytics_id', 'Google Analytics ID', ['class'=>'control-label']) }}
-            {{ Form::text('analytics_id[]', $items->keyBy('key')['analytics_id']['value'][0] ?? null, ['class' => 'form-control', 'placeholder' => 'Google Analytics Id']) }}
         </div>
         <div class="form-group">
             {{ Form::label('copyright', __('repositories.label.copyright'), ['class'=>'control-label']) }}

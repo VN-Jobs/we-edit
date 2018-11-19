@@ -28,9 +28,6 @@ class DestroyJob extends Job
         if (!empty($this->item->image_src)) {
             $this->deleteSource($this->item->image_src);
         }
-        if (!empty($this->item->image_ba_src)) {
-            $this->deleteSource($this->item->image_ba_src);
-        }
 
         return $repository->delete($this->item);
     }

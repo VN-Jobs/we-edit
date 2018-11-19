@@ -45,15 +45,6 @@ class UpdateJob extends Job
             $data['image_title'] = $image->title;
         }
 
-        if (array_has($this->params, 'image_ba')) {
-            if (!empty($this->item->image_ba_src)) {
-                $this->deleteSource($this->item->image_ba_src);
-            }
-            $imageBa = $this->uploadFile($this->params['image_ba']);
-            $data['image_ba_src'] = $imageBa->src;
-            $data['image_ba_title'] = $imageBa->title;
-        }
-
         $repository->update($this->item, $data);
     }
 }

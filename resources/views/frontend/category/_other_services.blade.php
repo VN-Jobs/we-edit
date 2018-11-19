@@ -7,11 +7,11 @@
             @foreach ($services as $service)
             <li class="item col-sm-6 width50-flex">
                 <div class="media row align-items-center">
-                    <a class="col-lg-6" href="{{ route('category.show', $service->category->slug) }}">
+                    <a class="col-lg-6" href="{{ route('category.show', $category->slug) }}">
                         <img src="{{ publicSrc($service->image_src) }}" alt="{{ $service->image_title }}" />
                     </a>
                     <div class="col-lg-6 media-body">
-                        <a href="{{ route('category.show', $service->category->slug) }}">
+                        <a href="{{ route('category.show', $category->slug) }}">
                             <h3>{{ $service->name }}</h3>
                             <p>{{ $service->intro }}</p>
                             <p class="price">{{ $service->price }}</p>

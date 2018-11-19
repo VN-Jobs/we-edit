@@ -24,7 +24,7 @@ class ProductRepositoryEloquent extends AbstractRepositoryEloquent implements Pr
         return $this->model
             ->where('locked', false)
             ->where('category_id', $categoryId)
-            ->orderByDesc('updated_at')
+            ->orderBy('sort')
             ->take($limit)
             ->get($columns);
     }
@@ -37,7 +37,7 @@ class ProductRepositoryEloquent extends AbstractRepositoryEloquent implements Pr
             ->with(['category' => function ($q) {
                 $q->select(['id', 'slug']);
             }])
-            ->inRandomOrder()
+            ->orderBy('sort')
             ->take($limit)
             ->get($columns);
     }

@@ -14,6 +14,7 @@ class Product extends Model
         'image_ba_title',
         'description',
         'intro',
+        'sort',
         'price',
         'is_home',
         'locked',

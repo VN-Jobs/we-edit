@@ -24,8 +24,8 @@ class Category extends Model
     public function products()
     {
         return $this->hasMany(Product::class)
-            ->select(['id', 'name', 'image_ba_src', 'description', 'category_id'])
-            ->orderByDesc('updated_at')
+            ->select(['id', 'name', 'image_src', 'intro', 'price', 'category_id'])
+            ->orderBy('sort')
             ->where('locked', false);
     }
 

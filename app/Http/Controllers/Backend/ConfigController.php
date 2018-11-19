@@ -31,6 +31,6 @@ class ConfigController extends BackendController
 
         return $this->doRequest(function () use ($data) {
             return $this->dispatchNow(new UpdateJob($data));
-        }, __FUNCTION__, false, url()->previous());
+        }, 'update', false, url()->previous());
     }
 }

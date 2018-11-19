@@ -53,6 +53,10 @@
                     {{ Form::label('price', __('repositories.label.price'), ['class'=>'control-label']) }}<span class="require">*</span>
                     {{ Form::text('price', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.price')]) }}
                 </div>
+                <div class="col-md-4">
+                    {{ Form::label('sort', __('repositories.label.sort'), ['class'=>'control-label']) }}<span class="require">*</span>
+                    {{ Form::number('sort', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.sort')]) }}
+                </div>
             </div>
         </div>
 
@@ -61,24 +65,12 @@
             {{ Form::textarea('intro', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => __('repositories.label.intro')]) }}
         </div>
 
-        <div class="form-group">
-            {{ Form::label('description', __('repositories.label.description'), ['class'=>'control-label']) }}
-            {{ Form::textarea('description', null, ['class' => 'form-control', 'rows' => 6, 'placeholder' => __('repositories.label.description')]) }}
-        </div>
-
     </div>
     <div class="col-sm-4">
         {{ Form::label('name', __('repositories.label.image') . __('repositories.image_size.product'), ['class' => 'control-label']) }}<span class="require">*</span>
         @component('backend._partials.components.uploadfile', ['imgFields' => (isset($item) && $item->image_src) ? $item->image_src : null])
         @slot('uploadFields')
             {{ Form::file('image', ['id' => 'image']) }}
-        @endslot
-        @endcomponent
-        <hr>
-        {{ Form::label('name', __('repositories.label.image_ba') . __('repositories.image_size.product_ba'), ['class' => 'control-label']) }}<span class="require">*</span>
-        @component('backend._partials.components.uploadfile', ['imgFields' => (isset($item) && $item->image_ba_src) ? $item->image_ba_src : null, 'elementFields' => 'image_ba-upload'])
-        @slot('uploadFields')
-            {{ Form::file('image_ba', ['id' => 'image_ba']) }}
         @endslot
         @endcomponent
     </div>

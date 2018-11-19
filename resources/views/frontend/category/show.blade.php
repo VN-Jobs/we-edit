@@ -16,7 +16,6 @@
             </div>
         </div>
     </section>
-    @include('frontend.category._products')
     @include('frontend.category._collections')
     @include('frontend.category._other_services')
 </main>

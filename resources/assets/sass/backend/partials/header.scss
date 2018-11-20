@@ -27,6 +27,9 @@
       display: inline-block;
       width: 100%;
       height: $navbar-height - 30;
+      line-height: $navbar-height - 30;
+      text-align: center;
+      color: #fff !important;
       margin-right: 0;
       background-repeat: no-repeat;
       background-position: center center;

@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
-
+@prepend('prescripts')
+    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5bf408c6a0286b00115a89f0&product=gdpr-compliance-tool' async='async'></script>
+@endprepend
 @section('title', isset($heading) ? $heading : __('repositories.frontend.post'))
 
 @section('page-content')
